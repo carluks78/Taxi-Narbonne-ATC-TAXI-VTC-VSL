@@ -92,7 +92,7 @@ const airportData: Record<string, AirportData> = {
     seoContent3: 'Pour vos arrivées à l\'aéroport de Béziers, nous vous attendons avec un panneau nominatif. Le parking longue durée de l\'aéroport BZR est gratuit si vous venez nous déposer à pied. Notre service de taxi Narbonne-Béziers Aéroport est ponctuel, propre et professionnel.',
     tips: ['50 min depuis Narbonne', 'Tarif compétitif', 'Vols saisonniers été', 'Service ponctuel garanti'],
     faq: [
-      { q: 'Quel est le prix du taxi Narbonne – Aéroport Béziers ?', a: 'Le tarif fixe est de 75 à 95€ depuis Narbonne, péages inclus. Contactez-nous au 07 68 30 33 03 pour un devis précis.' },
+      { q: 'Quel est le prix du taxi Narbonne – Aéroport Béziers ?', a: 'Le tarif fixe est de 80 à 100€ depuis Narbonne, péages inclus. Contactez-nous au 07 68 30 33 03 pour un devis précis.' },
       { q: 'Quelles compagnies volent depuis Béziers ?', a: 'Principalement des compagnies charter et low-cost en été : Ryanair, Jet2, TUI fly, etc. Vers le Royaume-Uni, l\'Irlande, les Pays-Bas et d\'autres destinations.' },
       { q: 'Taxi Béziers Aéroport depuis Gruissan ou Leucate ?', a: 'Oui, nous desservons toutes les communes de l\'Aude. Tarif adapté selon votre localisation de départ.' },
     ],
@@ -100,7 +100,7 @@ const airportData: Record<string, AirportData> = {
   'barcelone': {
     name: 'Aéroport de Barcelone-El Prat',
     code: 'BCN',
-    distance: '220 km', duration: '2h30', price: '580 – 600 €',
+    distance: '260 km', duration: '2h30', price: '580 – 600 €',
     heroImage: 'https://images.unsplash.com/photo-1616668724171-3c165d49be04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400',
     heroAlt: 'Aéroport Barcelone El Prat BCN terminal – Taxi Narbonne Barcelone aéroport',
     description: 'Taxi Narbonne – Aéroport de Barcelone El Prat (BCN). Transfert longue distance vers le 4e aéroport européen. Tarif fixe, chauffeur bilingue, départ garanti.',
@@ -109,7 +109,7 @@ const airportData: Record<string, AirportData> = {
     seoContent3: 'Pour vos arrivées à l\'aéroport de Barcelone, nous vous attendons dans le hall d\'arrivées du terminal correspondant à votre vol avec un panneau à votre nom. Attente gratuite en cas de retard. Pour les groupes familiaux ou les voyages d\'affaires, nos véhicules 7 places offrent tout le confort nécessaire pour ce trajet de 2h30.',
     tips: ['4e aéroport d\'Europe', 'Tarif tout inclus péages', 'Chauffeur bilingue', 'Panneau nominatif arrivée'],
     faq: [
-      { q: 'Quel est le tarif taxi Narbonne – Aéroport Barcelone El Prat ?', a: 'Le tarif fixe Narbonne – Barcelone El Prat (BCN) est de 270 à 320€, péages inclus. Pour un devis précis selon votre adresse, appelez le 07 68 30 33 03.' },
+      { q: 'Quel est le tarif taxi Narbonne – Aéroport Barcelone El Prat ?', a: 'Le tarif fixe Narbonne – Barcelone El Prat (BCN) est de 580 à 600€, péages inclus. Pour un devis précis selon votre adresse, appelez le 07 68 30 33 03.' },
       { q: 'Combien de temps dure le trajet Narbonne – Barcelone Aéroport ?', a: 'Environ 2h30 dans des conditions normales. En période de trafic intense (été, week-ends), prévoir 3 heures. Nous partons toujours avec une marge suffisante pour vos correspondances.' },
       { q: 'Peut-on réserver un taxi pour un vol tôt le matin depuis Barcelone ?', a: 'Absolument ! Nous sommes disponibles 24h/24. Pour un vol à 7h à Barcelone, il faut partir de Narbonne vers 4h du matin. Nous assurons ces départs nocturnes sans surcoût.' },
       { q: 'Le taxi peut-il aller à plusieurs terminaux à Barcelone El Prat ?', a: 'Oui, nous connaissons parfaitement les 3 terminaux de l\'aéroport BCN (T1, T2). Précisez votre terminal lors de la réservation pour que le chauffeur vous dépose au bon endroit.' },
