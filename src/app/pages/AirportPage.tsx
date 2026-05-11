@@ -29,7 +29,7 @@ const airportData: Record<string, AirportData> = {
   'montpellier': {
     name: 'Aéroport Montpellier Méditerranée',
     code: 'MPL',
-    distance: '100 km', duration: '1h00', price: '120 – 140 €',
+    distance: '100 km', duration: '1h00', price: '200 – 220 €',
     heroImage: 'https://images.unsplash.com/photo-1622982376381-e4b944344055?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400',
     heroAlt: 'Aéroport Montpellier Méditerranée terminal – Taxi Narbonne Montpellier Aéroport',
     description: 'Taxi depuis Narbonne vers l\'aéroport de Montpellier Méditerranée (MPL). Service premium, suivi de vol en temps réel, aide aux bagages. Tarif fixe garanti sans surprise.',
@@ -47,7 +47,7 @@ const airportData: Record<string, AirportData> = {
   'toulouse': {
     name: 'Aéroport Toulouse-Blagnac',
     code: 'TLS',
-    distance: '160 km', duration: '1h30', price: '170 – 200 €',
+    distance: '160 km', duration: '1h30', price: '350 – 370 €',
     heroImage: 'https://images.unsplash.com/photo-1623014470071-389a38c3f595?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400',
     heroAlt: 'Aéroport Toulouse Blagnac TLS – Taxi Narbonne Toulouse Aéroport',
     description: 'Taxi Narbonne – Aéroport Toulouse Blagnac (TLS). Transfert confortable et rapide vers le 4e aéroport de France. Départ garanti, même de nuit.',
@@ -65,7 +65,7 @@ const airportData: Record<string, AirportData> = {
   'carcassonne': {
     name: 'Aéroport de Carcassonne',
     code: 'CCF',
-    distance: '60 km', duration: '45 min', price: '80 – 100 €',
+    distance: '60 km', duration: '45 min', price: '130 – 150 €',
     heroImage: 'https://images.unsplash.com/photo-1767053853581-895341cd45d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400',
     heroAlt: 'Aéroport Carcassonne CCF piste avion nuit – Taxi Narbonne Aéroport Carcassonne',
     description: 'Taxi Narbonne – Aéroport de Carcassonne (CCF). Aéroport le plus proche de Narbonne, idéal pour les vols low-cost. Tarif économique, service rapide.',
@@ -83,7 +83,7 @@ const airportData: Record<string, AirportData> = {
   'beziers': {
     name: 'Aéroport Béziers Cap d\'Agde',
     code: 'BZR',
-    distance: '55 km', duration: '50 min', price: '75 – 95 €',
+    distance: '55 km', duration: '50 min', price: '80 – 100 €',
     heroImage: 'https://images.unsplash.com/photo-1767053853581-895341cd45d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400',
     heroAlt: 'Aéroport Béziers Cap d\'Agde BZR – Taxi Narbonne Béziers Aéroport',
     description: 'Taxi Narbonne – Aéroport de Béziers Cap d\'Agde (BZR). Transfert rapide et confortable vers cet aéroport régional en plein développement.',
@@ -100,7 +100,7 @@ const airportData: Record<string, AirportData> = {
   'barcelone': {
     name: 'Aéroport de Barcelone-El Prat',
     code: 'BCN',
-    distance: '220 km', duration: '2h30', price: '270 – 320 €',
+    distance: '220 km', duration: '2h30', price: '580 – 600 €',
     heroImage: 'https://images.unsplash.com/photo-1616668724171-3c165d49be04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400',
     heroAlt: 'Aéroport Barcelone El Prat BCN terminal – Taxi Narbonne Barcelone aéroport',
     description: 'Taxi Narbonne – Aéroport de Barcelone El Prat (BCN). Transfert longue distance vers le 4e aéroport européen. Tarif fixe, chauffeur bilingue, départ garanti.',
