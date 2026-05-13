@@ -11,7 +11,8 @@ interface SEOHeadProps {
 }
 
 const BASE_URL = 'https://www.atc-taxi-vtc.com';
-// Use the imported logo as default OG image (Vite resolves the correct asset URL)
+
+// Vite gère déjà l’URL finale du fichier importé
 const LOGO_OG_IMAGE = `${BASE_URL}/atc-taxi-narbonne-og-image.jpg`;
   ? `${window.location.origin}${logoImg}`
   : `${BASE_URL}${logoImg}`;
