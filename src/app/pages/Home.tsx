@@ -316,7 +316,7 @@ export function Home() {
                 Spécialiste du <strong>taxi conventionné en Occitanie</strong>, notre équipe accompagne chaque jour des patients vers leurs rendez-vous médicaux, hospitalisations, séances de dialyse et chimiothérapies à l'hôpital de Narbonne et dans toute la région. Notre agrément VSL (Véhicule Sanitaire Léger) garantit la prise en charge par la Sécurité Sociale sur prescription médicale.
               </p>
               <p>
-                Pour vos <strong>transferts aéroport depuis Narbonne</strong>, nous assurons des liaisons vers les principaux aéroports du Sud de la France : Montpellier Méditerranée (1h, tarif fixe ~130€), Toulouse-Blagnac (1h30, ~185€), Carcassonne (45 min, ~90€), Béziers-Cap d'Agde (50 min, ~85€) et Barcelone El Prat (2h30, ~275€). Le suivi de vol en temps réel est inclus dans chaque transfert.
+                Pour vos <strong>transferts aéroport depuis Narbonne</strong>, nous assurons des liaisons vers les principaux aéroports du Sud de la France : Montpellier Méditerranée (1h, tarif fixe ~200-220€), Toulouse-Blagnac (1h30, ~350-370€), Carcassonne (45 min, ~125-145€), Béziers-Cap d'Agde (50 min, ~80-90€) et Barcelone El Prat (2h30, ~570-590€). Le suivi de vol en temps réel est inclus dans chaque transfert.
               </p>
               <p>
                 Notre <strong>zone d'intervention</strong> couvre l'ensemble du département de l'Aude (11) et de l'Hérault (34) : Gruissan, Leucate, Sigean, Port-la-Nouvelle, Peyriac-de-Mer, Coursan, Vinassan, Carcassonne, Lézignan-Corbières, Béziers, Cap d'Agde, et bien d'autres communes. Nous intervenons également dans tout le Languedoc-Roussillon et la région Occitanie.
