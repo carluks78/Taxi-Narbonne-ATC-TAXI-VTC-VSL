@@ -12,7 +12,7 @@ interface SEOHeadProps {
 
 const BASE_URL = 'https://www.atc-taxi-vtc.com';
 // Use the imported logo as default OG image (Vite resolves the correct asset URL)
-const LOGO_OG_IMAGE = typeof window !== 'undefined'
+const LOGO_OG_IMAGE = `${BASE_URL}/atc-taxi-narbonne-og-image.jpg`;
   ? `${window.location.origin}${logoImg}`
   : `${BASE_URL}${logoImg}`;
 
@@ -39,8 +39,8 @@ export function SEOHead({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:image:width" content="800" />
-      <meta property="og:image:height" content="600" />
+      <meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="ATC TAXI VTC Narbonne – Logo" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
