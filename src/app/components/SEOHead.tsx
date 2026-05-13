@@ -12,10 +12,8 @@ interface SEOHeadProps {
 
 const BASE_URL = 'https://www.atc-taxi-vtc.com';
 
-// Vite gère déjà l’URL finale du fichier importé
+// ✅ OG image stable (SEO safe)
 const LOGO_OG_IMAGE = `${BASE_URL}/atc-taxi-narbonne-og-image.jpg`;
-  ? `${window.location.origin}${logoImg}`
-  : `${BASE_URL}${logoImg}`;
 
 export function SEOHead({
   title,
@@ -25,15 +23,23 @@ export function SEOHead({
   ogImage,
   schema,
 }: SEOHeadProps) {
-  const fullTitle = title.includes('ATC') ? title : `${title} | ATC TAXI VTC Narbonne`;
-  const canonicalUrl = canonical ? `${BASE_URL}${canonical}` : BASE_URL;
+  const fullTitle = title.includes('ATC')
+    ? title
+    : `${title} | ATC TAXI VTC Narbonne`;
+
+  const canonicalUrl = canonical
+    ? `${BASE_URL}${canonical}`
+    : BASE_URL;
+
   const imageUrl = ogImage ?? LOGO_OG_IMAGE;
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+
       {keywords && <meta name="keywords" content={keywords} />}
+
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph */}
@@ -41,7 +47,7 @@ export function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="ATC TAXI VTC Narbonne – Logo" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
@@ -56,10 +62,13 @@ export function SEOHead({
       <meta name="twitter:image:alt" content="ATC TAXI VTC Narbonne" />
 
       {/* Robots */}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      />
       <meta name="googlebot" content="index, follow" />
 
-      {/* Geo */}
+      {/* Geo SEO local */}
       <meta name="geo.region" content="FR-11" />
       <meta name="geo.placename" content="Narbonne" />
       <meta name="geo.position" content="43.1837;3.0029" />
@@ -70,14 +79,14 @@ export function SEOHead({
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-title" content="ATC TAXI Narbonne" />
 
-      {/* Performance hints */}
+      {/* Performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="dns-prefetch" href="https://www.google.com" />
 
-      {/* Schema */}
+      {/* Schema JSON-LD */}
       {schema && (
         <script type="application/ld+json">
-          {JSON.stringify(Array.isArray(schema) ? schema : schema)}
+          {JSON.stringify(schema)}
         </script>
       )}
     </Helmet>
