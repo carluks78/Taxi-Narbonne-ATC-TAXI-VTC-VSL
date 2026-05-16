@@ -233,11 +233,13 @@ data = data.sort((a: any, b: any) => {
 
 setSuggestions(data);
 setOpen(data.length > 0);
-        const data: NominatimResult[] = await res.json();
-        setSuggestions(data);
-        setOpen(data.length > 0);
-      } catch { /* silently ignore network errors */ }
-      finally { setLoading(false); }
+
+      } catch {
+        /* silently ignore network errors */
+      } finally {
+        setLoading(false);
+      }
+
     }, 420);
   };
 
