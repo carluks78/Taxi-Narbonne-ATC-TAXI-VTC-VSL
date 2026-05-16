@@ -180,9 +180,20 @@ function AddressAutocomplete({
       setLoading(true);
       try {
         const res = await fetch(
-          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(v)}&format=json&limit=6&addressdetails=1&countrycodes=fr`,
-          { headers: { 'Accept-Language': 'fr' } }
-        );
+  `https://nominatim.openstreetmap.org/search?` +
+  `q=${encodeURIComponent(v)}` +
+  `&format=json` +
+  `&limit=8` +
+  `&addressdetails=1` +
+  `&extratags=1` +
+  `&namedetails=1` +
+  `&countrycodes=fr,es`,
+  {
+    headers: {
+      'Accept-Language': 'fr',
+    }
+  }
+);
         const data: NominatimResult[] = await res.json();
         setSuggestions(data);
         setOpen(data.length > 0);
