@@ -122,19 +122,31 @@ interface NominatimResult { place_id: number; display_name: string; }
 function formatAddress(item: any): string {
   if (!item) return '';
 
-  // fallback si l'API ne renvoie pas address
-  if (!item.address) {
-    return item.display_name || '';
+  const name =
+    item.namedetails?.name ||
+    item.display_name?.split(',')[0] ||
+    '';
+
+  const type = (item.type || '').toLowerCase();
+
+  // Si gare/aéroport → garder le nom complet
+  if (
+    type.includes('station') ||
+    type.includes('railway') ||
+    type.includes('aerodrome') ||
+    name.toLowerCase().includes('gare')
+  ) {
+    return name;
   }
 
   const a = item.address || {};
 
-  const street = a.road || a.pedestrian || a.footway || '';
+  const street = a.road || '';
   const number = a.house_number || '';
   const city = a.city || a.town || a.village || '';
   const postcode = a.postcode || '';
 
-  return `${street}${number ? ' ' + number : ''}, ${postcode} ${city}, France`
+  return `${street}${number ? ' ' + number : ''}, ${postcode} ${city}`
     .replace(/^,\s*/, '')
     .trim();
 }
@@ -182,18 +194,45 @@ function AddressAutocomplete({
         const res = await fetch(
   `https://nominatim.openstreetmap.org/search?` +
   `q=${encodeURIComponent(v)}` +
-  `&format=json` +
-  `&limit=8` +
+  `&format=jsonv2` +
+  `&limit=10` +
   `&addressdetails=1` +
   `&extratags=1` +
   `&namedetails=1` +
-  `&countrycodes=fr,es`,
+  `&countrycodes=fr,es` +
+  `&featuretype=settlement`,
   {
     headers: {
       'Accept-Language': 'fr',
+      'User-Agent': 'ATC-TAXI'
     }
   }
 );
+
+let data = await res.json();
+
+// priorité aux gares / aéroports
+data = data.sort((a: any, b: any) => {
+  const score = (x: any) => {
+    const txt =
+      `${x.display_name} ${x.type} ${x.class}`.toLowerCase();
+
+    let s = 0;
+
+    if (txt.includes('gare')) s += 100;
+    if (txt.includes('station')) s += 100;
+    if (txt.includes('railway')) s += 100;
+    if (txt.includes('aéroport')) s += 100;
+    if (txt.includes('airport')) s += 100;
+
+    return s;
+  };
+
+  return score(b) - score(a);
+});
+
+setSuggestions(data);
+setOpen(data.length > 0);
         const data: NominatimResult[] = await res.json();
         setSuggestions(data);
         setOpen(data.length > 0);
