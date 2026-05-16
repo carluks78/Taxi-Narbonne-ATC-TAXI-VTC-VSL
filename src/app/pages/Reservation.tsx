@@ -119,11 +119,15 @@ function buildWhatsApp(data: BookingFormData): string {
 // ── Nominatim Autocomplete ─────────────────────────────────────────────────────
 interface NominatimResult { place_id: number; display_name: string; }
 
-function formatAddress(displayName: string): string {
-  const parts = displayName.split(', ');
-  // Keep max 4 meaningful parts (street/place, city, dept, country)
-  const filtered = parts.filter((p) => !/^\d{5}$/.test(p) && p !== 'France métropolitaine');
-  return filtered.slice(0, 4).join(', ');
+function formatAddress(item: any): string {
+  const a = item.address;
+
+  const street = a.road || a.pedestrian || a.footway || '';
+  const number = a.house_number || '';
+  const city = a.city || a.town || a.village || '';
+  const postcode = a.postcode || '';
+
+  return `${street}${number ? ' ' + number : ''}, ${postcode} ${city}, France`.trim();
 }
 
 function AddressAutocomplete({
@@ -167,7 +171,7 @@ function AddressAutocomplete({
       setLoading(true);
       try {
         const res = await fetch(
-          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(v)}&format=json&limit=6&addressdetails=0`,
+          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(v)}&format=json&limit=6&addressdetails=1&countrycodes=fr`,
           { headers: { 'Accept-Language': 'fr' } }
         );
         const data: NominatimResult[] = await res.json();
@@ -178,13 +182,13 @@ function AddressAutocomplete({
     }, 420);
   };
 
-  const select = (item: NominatimResult) => {
-    const label = formatAddress(item.display_name);
-    setInputVal(label);
-    onChange(label);
-    setSuggestions([]);
-    setOpen(false);
-  };
+  const select = (item: any) => {
+  const label = formatAddress(item);
+  setInputVal(label);
+  onChange(label);
+  setSuggestions([]);
+  setOpen(false);
+};
 
   return (
     <div ref={containerRef} style={{ position: 'relative' }}>
