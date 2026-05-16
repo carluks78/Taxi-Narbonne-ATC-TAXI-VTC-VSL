@@ -10,6 +10,7 @@ import { TaxiGare } from './pages/TaxiGare';
 import { GeoPage } from './pages/GeoPage';
 import { AirportPage } from './pages/AirportPage';
 import { NotFound } from './pages/NotFound';
+import { Reservation } from './pages/Reservation';
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
       { path: 'zones-desservies', Component: ZonesDesservies },
       { path: 'avis-clients', Component: AvisClients },
       { path: 'taxi-narbonne', Component: TaxiNarbonne },
+      { path: 'reserver-taxi-narbonne', Component: Reservation },
 
       // ── Pages Gare ──
       { path: 'taxi-gare-narbonne', Component: TaxiGare },
