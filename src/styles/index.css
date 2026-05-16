@@ -2,6 +2,13 @@
 @import './tailwind.css';
 @import './theme.css';
 
+/* ── Fix iOS zoom input ── */
+input,
+textarea,
+select {
+  font-size: 16px !important;
+}
+
 /* ── Marquee / Ticker animation ── */
 @keyframes marquee-scroll {
   0%   { transform: translateX(0); }
