@@ -195,12 +195,11 @@ function AddressAutocomplete({
   `https://nominatim.openstreetmap.org/search?` +
   `q=${encodeURIComponent(v)}` +
   `&format=jsonv2` +
-  `&limit=10` +
+  `&limit=20` +
   `&addressdetails=1` +
   `&extratags=1` +
   `&namedetails=1` +
-  `&countrycodes=fr,es` +
-  `&featuretype=settlement`,
+  `&countrycodes=fr,es`,
   {
     headers: {
       'Accept-Language': 'fr',
