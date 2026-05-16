@@ -287,6 +287,7 @@ const darkInput: React.CSSProperties = {
   borderRadius: '0.5rem',
   color: '#ffffff',
   padding: '0.65rem 0.875rem',
+  fontSize: '1rem',
   fontSize: '0.875rem',
   outline: 'none',
 };
@@ -298,6 +299,7 @@ const whiteInput: React.CSSProperties = {
   borderRadius: '0.5rem',
   color: '#111827',
   padding: '0.65rem 0.875rem',
+  fontSize: '1rem',
   fontSize: '0.875rem',
   outline: 'none',
   colorScheme: 'light' as never,
