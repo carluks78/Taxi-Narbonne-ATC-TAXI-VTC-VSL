@@ -120,14 +120,23 @@ function buildWhatsApp(data: BookingFormData): string {
 interface NominatimResult { place_id: number; display_name: string; }
 
 function formatAddress(item: any): string {
-  const a = item.address;
+  if (!item) return '';
+
+  // fallback si l'API ne renvoie pas address
+  if (!item.address) {
+    return item.display_name || '';
+  }
+
+  const a = item.address || {};
 
   const street = a.road || a.pedestrian || a.footway || '';
   const number = a.house_number || '';
   const city = a.city || a.town || a.village || '';
   const postcode = a.postcode || '';
 
-  return `${street}${number ? ' ' + number : ''}, ${postcode} ${city}, France`.trim();
+  return `${street}${number ? ' ' + number : ''}, ${postcode} ${city}, France`
+    .replace(/^,\s*/, '')
+    .trim();
 }
 
 function AddressAutocomplete({
@@ -271,7 +280,7 @@ function AddressAutocomplete({
                 onMouseLeave={(e) => (e.currentTarget.style.background = 'none')}
               >
                 <MapPin size={12} style={{ color: TEAL, flexShrink: 0, marginTop: 2 }} />
-                <span>{formatAddress(item.display_name)}</span>
+                <span>{formatAddress(item)}</span>
               </button>
             ))}
           </motion.div>
