@@ -19,6 +19,13 @@
       <image:title>ATC TAXI VTC Narbonne – Taxi 24h/24</image:title>
     </image:image>
   </url>
+        
+  <url>
+    <loc>https://www.atc-taxi-vtc.com/reserver-taxi-narbonne</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.97</priority>
+  </url>
 
   <url>
     <loc>https://www.atc-taxi-vtc.com/taxi-narbonne</loc>
