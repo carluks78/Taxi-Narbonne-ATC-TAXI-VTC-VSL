@@ -233,15 +233,13 @@ data = data.sort((a: any, b: any) => {
 setSuggestions(data);
 setOpen(data.length > 0);
 
-      } catch {
-        /* silently ignore network errors */
-      } finally {
-        setLoading(false);
-      }
-
-    }, 420);
-  };
-
+} catch {
+  /* silently ignore network errors */
+} finally {
+  setLoading(false);
+}
+}, 420);
+};
   const select = (item: any) => {
   const label = formatAddress(item);
   setInputVal(label);
