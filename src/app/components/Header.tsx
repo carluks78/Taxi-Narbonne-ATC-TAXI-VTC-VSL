@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, Menu, X, ChevronDown, MapPin, Plane, Briefcase } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, MapPin, Plane, Briefcase, CalendarCheck } from 'lucide-react';
 import logo from '../../imports/ACT_TAXI5.png';
 
 const PHONE = '0768303303';
@@ -231,15 +231,15 @@ export function Header() {
               Contact
             </Link>
 
-            <a
-              href={`tel:${PHONE}`}
-              className="ml-3 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold text-white transition-all hover:scale-105 hover:opacity-90"
-              style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
-            >
-              <Phone size={14} />
-              Réserver
-            </a>
-          </div>
+           <Link
+  to="/reserver-taxi-narbonne"
+  className="ml-3 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold text-white transition-all hover:scale-105 hover:opacity-90"
+  style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
+>
+  <CalendarCheck size={14} />
+  Réserver en ligne
+</Link>
+            </div>
 
           {/* Mobile: phone + hamburger */}
           <div className="lg:hidden flex items-center gap-2">
@@ -276,6 +276,7 @@ export function Header() {
           >
             <div className="px-4 py-4 space-y-1 max-h-[70vh] overflow-y-auto">
               {[
+                { label: '📅 Réserver en ligne', href: '/reserver-taxi-narbonne' },
                 { label: 'Accueil', href: '/' },
                 { label: 'Taxi Narbonne', href: '/taxi-narbonne' },
                 { label: 'Taxi Gare Narbonne', href: '/taxi-gare-narbonne' },
