@@ -202,8 +202,7 @@ function AddressAutocomplete({
   `&countrycodes=fr,es`,
   {
     headers: {
-      'Accept-Language': 'fr',
-      'User-Agent': 'ATC-TAXI'
+      'Accept-Language': 'fr'
     }
   }
 );
