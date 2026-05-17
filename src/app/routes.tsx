@@ -12,9 +12,7 @@ export default [
     route("taxi-narbonne", "./src/app/pages/TaxiNarbonne.tsx"),
     route("reserver-taxi-narbonne", "./src/app/pages/Reservation.tsx"),
 
-    route("taxi-gare-narbonne", "./src/app/pages/TaxiGare.tsx"),
-    route("taxi-gare-de-narbonne", "./src/app/pages/TaxiGare.tsx"),
-    route("taxi-narbonne-reservation-24h-gare-aeroport", "./src/app/pages/TaxiGare.tsx"),
+    route("taxi-gare/:slug", "./src/app/pages/TaxiGare.tsx"),
 
     route("taxi-aeroport-montpellier", "./src/app/pages/AirportPage.tsx"),
     route("taxi-aeroport-toulouse", "./src/app/pages/AirportPage.tsx"),
