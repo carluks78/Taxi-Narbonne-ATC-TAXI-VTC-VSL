@@ -4,9 +4,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from 'react-router'
-import { HelmetProvider } from 'react-helmet-async'
-import '../styles/index.css'
+} from "react-router";
+
+import { HelmetProvider } from "react-helmet-async";
+import "../styles/index.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -18,18 +19,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <HelmetProvider>
+          {children}
+        </HelmetProvider>
+
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
 
 export default function Root() {
-  return (
-    <HelmetProvider>
-      <Outlet />
-    </HelmetProvider>
-  )
+  return <Outlet />;
 }
