@@ -349,7 +349,6 @@ const darkInput: React.CSSProperties = {
   color: '#ffffff',
   padding: '0.65rem 0.875rem',
   fontSize: '1rem',
-  fontSize: '0.875rem',
   outline: 'none',
 };
 
@@ -361,7 +360,6 @@ const whiteInput: React.CSSProperties = {
   color: '#111827',
   padding: '0.65rem 0.875rem',
   fontSize: '1rem',
-  fontSize: '0.875rem',
   outline: 'none',
   colorScheme: 'light' as never,
 };
