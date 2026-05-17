@@ -20,15 +20,33 @@ export default [
     route('taxi-aeroport/:slug', './src/app/pages/AirportPage.tsx'),
 
     // GEO
-    route('taxi-gruissan', './src/app/pages/GeoPage.tsx'),
-    route('taxi-leucate', './src/app/pages/GeoPage.tsx'),
-    route('taxi-sigean', './src/app/pages/GeoPage.tsx'),
-    route('taxi-port-la-nouvelle', './src/app/pages/GeoPage.tsx'),
-    route('taxi-narbonne-plage', './src/app/pages/GeoPage.tsx'),
-    route('taxi-carcassonne', './src/app/pages/GeoPage.tsx'),
-    route('taxi-beziers-cap-dagde', './src/app/pages/GeoPage.tsx'),
-    route('taxi-narbonne-barcelone', './src/app/pages/GeoPage.tsx'),
-    route('taxi-coursan', './src/app/pages/GeoPage.tsx'),
+    route('taxi-gruissan', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-gruissan',
+}),
+route('taxi-leucate', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-leucate',
+}),
+route('taxi-sigean', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-sigean',
+}),
+route('taxi-port-la-nouvelle', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-port-la-nouvelle',
+}),
+route('taxi-narbonne-plage', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-narbonne-plage',
+}),
+route('taxi-carcassonne', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-carcassonne',
+}),
+route('taxi-beziers-cap-dagde', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-beziers',
+}),
+route('taxi-narbonne-barcelone', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-barcelone',
+}),
+route('taxi-coursan', './src/app/pages/GeoPage.tsx', {
+  id: 'geo-coursan',
+}),
 
     route('*', './src/app/pages/NotFound.tsx'),
   ]),
