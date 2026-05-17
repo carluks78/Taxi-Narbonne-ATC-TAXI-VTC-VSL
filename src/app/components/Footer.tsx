@@ -158,7 +158,6 @@ export function Footer() {
                 { label: 'Zones desservies', href: '/zones-desservies' },
                 { label: 'Avis clients', href: '/avis-clients' },
                 { label: 'Contact', href: '/contact' },
-                { label: 'Sitemap', href: '/sitemap.xml', external: true },
               ].map((item) => (
                 <li key={item.href + item.label}>
                   {item.external ? (
