@@ -334,35 +334,54 @@ export function GeoPage() {
   const heroAlt = data?.heroAlt ?? `Taxi Narbonne vers ${city}`;
 
   const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': ['TaxiService', 'LocalBusiness'],
-    name: `ATC TAXI VTC Narbonne – Taxi ${city}`,
-    description: description,
-    telephone: '+33768303303',
-    url: `https://www.atc-taxi-vtc.com/taxi-${slug}`,
-    image: 'https://www.atc-taxi-vtc.com/logo.png',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Narbonne',
-      addressLocality: 'Narbonne',
-      postalCode: '11100',
-      addressRegion: 'Occitanie',
-      addressCountry: 'FR',
-    },
-    geo: { '@type': 'GeoCoordinates', latitude: 43.1837, longitude: 3.0029 },
-    openingHoursSpecification: [{
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
-      opens: '00:00',
-      closes: '23:59',
-    }],
-    priceRange: '€€',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '200', bestRating: '5' },
-    areaServed: [
-      { '@type': 'City', name: 'Narbonne' },
-      { '@type': 'City', name: city },
-    ],
-  };
+  '@context': 'https://schema.org',
+  '@type': ['TaxiService', 'LocalBusiness'],
+  name: `ATC TAXI VTC Narbonne – Taxi ${city}`,
+  description: description,
+  telephone: '+33768303303',
+  url: `https://www.atc-taxi-vtc.com/taxi-${slug}`,
+  image: 'https://www.atc-taxi-vtc.com/logo.png',
+
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'ATC TAXI VTC',
+    addressLocality: 'Narbonne',
+    postalCode: '11100',
+    addressRegion: 'Occitanie',
+    addressCountry: 'FR',
+  },
+
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 43.1837,
+    longitude: 3.0029,
+  },
+
+  openingHoursSpecification: [{
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  }],
+
+  priceRange: '€€',
+
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '200',
+    bestRating: '5'
+  },
+
+  areaServed: [
+    { '@type': 'City', name: 'Narbonne' },
+    { '@type': 'City', name: city },
+  ],
+
+  currenciesAccepted: 'EUR',
+  paymentAccepted: 'Cash, Credit Card',
+  serviceType: 'Taxi, VTC, Transport médical VSL',
+};
 
   const faqSchema = data?.faq && data.faq.length > 0 ? {
     '@context': 'https://schema.org',
@@ -374,15 +393,46 @@ export function GeoPage() {
     })),
   } : null;
 
+  const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Accueil',
+      item: 'https://www.atc-taxi-vtc.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Zones desservies',
+      item: 'https://www.atc-taxi-vtc.com/zones-desservies',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: `Taxi ${city}`,
+      item: `https://www.atc-taxi-vtc.com/taxi-${slug}`,
+    },
+  ],
+};
+
+  const schemas = [
+  localBusinessSchema,
+  breadcrumbSchema,
+  ...(faqSchema ? [faqSchema] : [])
+];
+
   return (
-    <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen">
-      <SEOHead
-        title={`Taxi Narbonne – ${city} | ATC TAXI VTC – Transfert 24h/24`}
-        description={seoDescription}
-        canonical={`/taxi-${slug}`}
-        keywords={`taxi narbonne ${city.toLowerCase()}, taxi ${city.toLowerCase()}, transfert narbonne ${city.toLowerCase()}, vtc narbonne ${city.toLowerCase()}, taxi aude ${city.toLowerCase()}`}
-        schema={faqSchema ? [localBusinessSchema, faqSchema] : localBusinessSchema}
-      />
+  <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen">
+    <SEOHead
+      title={`Taxi Narbonne – ${city} | ATC TAXI VTC – Transfert 24h/24`}
+      description={seoDescription}
+      canonical={`/taxi-${slug}`}
+      keywords={`taxi narbonne ${city.toLowerCase()}, taxi ${city.toLowerCase()}, transfert narbonne ${city.toLowerCase()}, vtc narbonne ${city.toLowerCase()}, taxi aude ${city.toLowerCase()}`}
+      schema={schemas}
+    />
 
       {/* ── HERO with full image ── */}
       <section className="relative min-h-[85vh] flex items-end overflow-hidden" style={{ paddingTop: '80px' }}>
