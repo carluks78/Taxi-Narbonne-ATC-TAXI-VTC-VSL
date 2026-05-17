@@ -17,11 +17,7 @@ export default [
     route('taxi-gare-narbonne', './src/app/pages/TaxiGare.tsx'),
 
     // AÉROPORTS
-    route('taxi-aeroport-montpellier', './src/app/pages/AirportPage.tsx'),
-    route('taxi-aeroport-toulouse', './src/app/pages/AirportPage.tsx'),
-    route('taxi-aeroport-carcassonne', './src/app/pages/AirportPage.tsx'),
-    route('taxi-aeroport-beziers', './src/app/pages/AirportPage.tsx'),
-    route('taxi-aeroport-barcelone', './src/app/pages/AirportPage.tsx'),
+    route('taxi-aeroport/:slug', './src/app/pages/AirportPage.tsx'),
 
     // GEO
     route('taxi-gruissan', './src/app/pages/GeoPage.tsx'),
