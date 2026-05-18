@@ -3,17 +3,13 @@ import { Link } from 'react-router';
 import { Phone, MessageCircle, Train, Clock, CheckCircle, Star } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 
-export async function loader() {
-  return null;
-}
-
 const PHONE = '0768303303';
 const PHONE_DISPLAY = '07 68 30 33 03';
 const WHATSAPP = 'https://wa.me/33768303303?text=Bonjour%2C%20je%20souhaite%20un%20taxi%20pour%20la%20gare%20de%20Narbonne.';
 const TEAL = '#3AB4B1';
 const TEAL_DARK = '#2A9490';
 
-export function TaxiGare() {
+export default function TaxiGare() {
   return (
     <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen pt-28">
       <SEOHead
