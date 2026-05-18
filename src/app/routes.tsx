@@ -11,16 +11,15 @@ export default [
 
     route("taxi-narbonne", "./pages/TaxiNarbonne.tsx"),
 
-    // Taxi gare + alias avec IDs uniques
+    // Taxi gare + alias
     route("taxi-gare-narbonne", "./pages/TaxiGare.tsx"),
     route("taxi-gare-de-narbonne", "./pages/TaxiGare.tsx", { id: "taxi-gare-de-narbonne" }),
-    route(
-      "taxi-narbonne-reservation-24h-gare-aeroport",
-      "./pages/TaxiGare.tsx",
-      { id: "taxi-gare-reservation" }
-    ),
+    route("taxi-narbonne-reservation-24h-gare-aeroport", "./pages/TaxiGare.tsx", { id: "taxi-gare-reservation" }),
 
     route("reserver-taxi-narbonne", "./pages/Reservation.tsx"),
+
+    // ✅ ROUTE DYNAMIQUE (IMPORTANT)
+    route("taxi/:city", "./pages/GeoPage.tsx"),
 
     route("*", "./pages/NotFound.tsx"),
   ]),
