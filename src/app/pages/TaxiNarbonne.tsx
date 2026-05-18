@@ -26,8 +26,7 @@ export default function TaxiNarbonne() {
     <div className="min-h-screen pt-28" style={{ backgroundColor: '#060F1E' }}>
       {/* ton contenu complet */}
     </div>
-  );
-}
+    
     <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen pt-28">
       <SEOHead
         title="Taxi Narbonne 24h/24 | ATC TAXI VTC – Réservation Immédiate"
