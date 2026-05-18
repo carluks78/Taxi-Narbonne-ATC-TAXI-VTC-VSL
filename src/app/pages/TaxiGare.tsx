@@ -4,7 +4,7 @@ import { Phone, MessageCircle, Train, Clock, CheckCircle, Star } from 'lucide-re
 import { SEOHead } from '../components/SEOHead';
 
 export async function loader() {
-  return {};
+  return null;
 }
 
 const PHONE = '0768303303';
