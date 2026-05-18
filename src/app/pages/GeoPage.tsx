@@ -11,8 +11,8 @@ import {
 import { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 
-export default function GeoPage() {
-  return <h1 style={{ color: 'white' }}>TEST GEO OK</h1>;
+export async function loader() {
+  return null;
 }
 
 const PHONE = '0768303303';
