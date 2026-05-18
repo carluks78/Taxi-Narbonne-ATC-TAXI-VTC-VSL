@@ -12,7 +12,7 @@ const PHONE_DISPLAY = '07 68 30 33 03';
 const TEAL = '#3AB4B1';
 const TEAL_DARK = '#2A9490';
 
-export function NotFound() {
+export default function NotFound() {
   return (
     <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen pt-28 flex items-center justify-center px-4">
       <SEOHead
