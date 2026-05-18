@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Link, useLocation } from 'react-router';
+import { Link, useParams } from 'react-router';
 import { Phone, MessageCircle, Plane, Clock, CheckCircle, Star, Shield, Award, MapPin } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 
@@ -123,9 +123,9 @@ const airportData: Record<string, AirportData> = {
 };
 
 export function AirportPage() {
-  const location = useLocation();
   // Extract slug from pathname: /taxi-aeroport-montpellier → montpellier
-  const slug = location.pathname.replace(/^\/taxi-aeroport-/, '') || '';
+  const params = useParams();
+const slug = Object.values(params)[0] ?? '';
   const data = slug ? airportData[slug] : null;
 
   const airportName = data?.name ?? `Aéroport ${slug?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) ?? ''}`;
