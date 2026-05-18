@@ -5,8 +5,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
-import { HelmetProvider } from "react-helmet-async";
 import "../styles/index.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -19,10 +17,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <HelmetProvider>
-          {children}
-        </HelmetProvider>
-
+        {children}
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -30,6 +25,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+export default function Root() {
+  return <Outlet />;
+}
 export default function Root() {
   return <Outlet />;
 }
