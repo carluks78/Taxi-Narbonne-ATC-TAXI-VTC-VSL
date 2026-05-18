@@ -331,20 +331,25 @@ const cityData: Record<string, CityData> = {
 
 // ─── Composant principal ──────────────────────────────────────────────────────
 export default function GeoPage() {
-  // ✅ CHANGEMENT CLÉ : useParams() au lieu de useLocation().pathname
-  // React Router v7 SSR injecte le slug directement dans les params
-  const location = useLocation();
-
-const { city } = useParams();
-const slug = city ?? '';
+  const { city: slug = '' } = useParams();
 
   const data = cityData[slug] ?? null;
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const city = data?.city ?? slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-  const description = data?.description ?? `Taxi Narbonne – ${city}. Service de taxi professionnel ATC TAXI VTC disponible 24h/24. Réservez au ${PHONE_DISPLAY}.`;
-  const heroImage = data?.heroImage ?? 'https://images.unsplash.com/photo-1697464960895-7979baf9e029?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400';
-  const heroAlt = data?.heroAlt ?? `Taxi Narbonne vers ${city}`;
+  const cityName =
+    data?.city ??
+    slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+  const description =
+    data?.description ??
+    `Taxi Narbonne – ${cityName}. Service de taxi professionnel ATC TAXI VTC disponible 24h/24. Réservez au ${PHONE_DISPLAY}.`;
+
+  const heroImage =
+    data?.heroImage ??
+    'https://images.unsplash.com/photo-1697464960895-7979baf9e029?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400';
+
+  const heroAlt =
+    data?.heroAlt ?? `Taxi Narbonne vers ${cityName}`;
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
