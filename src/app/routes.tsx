@@ -1,18 +1,6 @@
-import { createBrowserRouter } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './pages/Home';
-import { Services } from './pages/Services';
-import { Contact } from './pages/Contact';
-import { ZonesDesservies } from './pages/ZonesDesservies';
-import { AvisClients } from './pages/AvisClients';
-import { TaxiNarbonne } from './pages/TaxiNarbonne';
-import { TaxiGare } from './pages/TaxiGare';
-import { GeoPage } from './pages/GeoPage';
-import { AirportPage } from './pages/AirportPage';
-import { NotFound } from './pages/NotFound';
-import { Reservation } from './pages/Reservation';
+import { type RouteConfig, index, route } from '@react-router/dev/routes'
 
- export default [
+  export default [
   route('/', './components/Layout.tsx', [
 
     index('./pages/Home.tsx'),
@@ -57,4 +45,3 @@ import { Reservation } from './pages/Reservation';
     route('*', './pages/NotFound.tsx'),
   ]),
 ] satisfies RouteConfig
-]);
