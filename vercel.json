@@ -1,8 +1,5 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "framework": "react-router",
+  "outputDirectory": "build/client",
+  "buildCommand": "react-router build"
 }
