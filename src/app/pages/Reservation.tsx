@@ -536,7 +536,7 @@ function SuccessScreen({ data, onReset }: { data: BookingFormData; onReset: () =
 }
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
-export function Reservation() {
+export default function Reservation() {
   const [submitted, setSubmitted] = useState(false);
   const [bookingData, setBookingData] = useState<BookingFormData | null>(null);
 
