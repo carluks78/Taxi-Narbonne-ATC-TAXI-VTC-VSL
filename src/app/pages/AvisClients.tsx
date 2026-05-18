@@ -47,7 +47,7 @@ const reviews = [
   { name: 'Thomas L.', city: 'Narbonne', date: 'Mai 2024', text: 'Service 5 étoiles ! Réponse immédiate, véhicule de qualité, chauffeur souriant. Parfait du début à la fin.' },
 ];
 
-export function AvisClients() {
+export default function AvisClients() {
   return (
     <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen pt-28">
       <SEOHead
