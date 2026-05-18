@@ -2,10 +2,13 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import { reactRouter } from '@react-router/dev/vite'
+import { vercelPreset } from '@vercel/react-router/vite'
 
 export default defineConfig({
   plugins: [
-    reactRouter(),   // remplace react() — gère React + SSR automatiquement
+    reactRouter({
+      presets: [vercelPreset()],
+    }),
     tailwindcss(),
   ],
   resolve: {
