@@ -12,7 +12,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingWidgets from "./components/FloatingWidgets";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export default function Root() {
   return (
     <html lang="fr">
       <head>
@@ -23,18 +23,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
 
       <body>
-        {/* HEADER global */}
         <Header />
 
-        {/* contenu des pages */}
         <main>
-          {children}
+          <Outlet />
         </main>
 
-        {/* widgets flottants (whatsapp / call / etc) */}
         <FloatingWidgets />
-
-        {/* FOOTER global */}
         <Footer />
 
         <ScrollRestoration />
@@ -42,8 +37,4 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
-
-export default function Root() {
-  return <Outlet />;
 }
