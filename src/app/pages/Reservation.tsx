@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export async function loader() {
-  return {};
+  return null;
 }
 
 // ── Constants ─────────────────────────────────────────────────────────────────
