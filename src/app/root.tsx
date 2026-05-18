@@ -28,6 +28,3 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function Root() {
   return <Outlet />;
 }
-export default function Root() {
-  return <Outlet />;
-}
