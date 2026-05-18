@@ -35,7 +35,7 @@ const zones = [
   { city: 'Barcelone', dept: 'Espagne', km: '220', href: '/taxi-narbonne-barcelone', desc: 'Aéroport El Prat, port, centre' },
 ];
 
-export function ZonesDesservies() {
+export default function ZonesDesservies() {
   return (
     <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen pt-28">
       <SEOHead
