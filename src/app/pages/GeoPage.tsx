@@ -335,9 +335,8 @@ export default function GeoPage() {
   // React Router v7 SSR injecte le slug directement dans les params
   const location = useLocation();
 
-const slug = location.pathname
-  .replace('/taxi-', '')
-  .replace(/^\/+/, '');
+const { city } = useParams();
+const slug = city ?? '';
 
   const data = cityData[slug] ?? null;
   const [openFaq, setOpenFaq] = useState<number | null>(null);
