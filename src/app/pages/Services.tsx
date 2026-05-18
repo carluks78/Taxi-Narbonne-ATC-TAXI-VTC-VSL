@@ -51,7 +51,7 @@ const services = [
   },
 ];
 
-export function Services() {
+export default function Services() {
   return (
     <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen pt-28">
       <SEOHead
