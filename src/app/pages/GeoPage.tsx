@@ -3,7 +3,7 @@
 // En SSR, React Router injecte les params directement — plus besoin de parser l'URL
 
 import { motion } from 'motion/react';
-import { Link, useLocation } from 'react-router';
+import { Link, useParams } from 'react-router';
 import {
   Phone, MessageCircle, MapPin, CheckCircle,
   ChevronDown, ChevronUp, Star, Clock, Shield, Award
