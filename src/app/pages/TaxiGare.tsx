@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Phone, MessageCircle, Train, Clock, CheckCircle, Star } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 
