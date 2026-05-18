@@ -15,7 +15,7 @@ const WHATSAPP = 'https://wa.me/33768303303';
 const TEAL = '#3AB4B1';
 const TEAL_DARK = '#2A9490';
 
-export function Contact() {
+export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', date: '', from: '', to: '', message: '' });
   const [sent, setSent] = useState(false);
 
