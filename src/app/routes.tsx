@@ -11,7 +11,7 @@ export default [
     route('taxi-narbonne', './pages/TaxiNarbonne.tsx'),
     route('reserver-taxi-narbonne', './pages/Reservation.tsx'),
 
-    route('taxi-gare-narbonne', './pages/TaxiGare.tsx')
+    route('taxi-gare-narbonne', './pages/TaxiGare.tsx'),
 
     route('taxi-aeroport-montpellier', './pages/AirportPage.tsx'),
     route('taxi-aeroport-toulouse', './pages/AirportPage.tsx'),
