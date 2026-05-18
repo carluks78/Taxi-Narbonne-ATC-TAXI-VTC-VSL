@@ -7,10 +7,7 @@ import {
 } from "react-router";
 
 import "../styles/index.css";
-
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import { FloatingWidgets } from "./components/FloatingWidgets";
+import { Layout } from "./components/Layout";
 
 export default function Root() {
   return (
@@ -23,14 +20,9 @@ export default function Root() {
       </head>
 
       <body>
-        <Header />
-
-        <main>
+        <Layout>
           <Outlet />
-        </main>
-
-        <Footer />
-        <FloatingWidgets />
+        </Layout>
 
         <ScrollRestoration />
         <Scripts />
