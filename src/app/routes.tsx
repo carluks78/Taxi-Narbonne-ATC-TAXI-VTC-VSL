@@ -4,7 +4,7 @@ import { type RouteConfig, index, route } from '@react-router/dev/routes'
   route('/', './components/Layout.tsx', [
 
     index('./pages/Home.tsx'),
-    route('services',                './pages/Services.tsx'),
+    route('services',                
     route('contact',                 './pages/Contact.tsx'),
     route('zones-desservies',        './pages/ZonesDesservies.tsx'),
     route('avis-clients',            './pages/AvisClients.tsx'),
