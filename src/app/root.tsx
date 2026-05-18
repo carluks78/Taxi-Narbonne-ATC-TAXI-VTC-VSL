@@ -7,7 +7,11 @@ import {
 } from "react-router";
 import "../styles/index.css";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import FloatingWidgets from "./components/FloatingWidgets";
+
+export default function Root() {
   return (
     <html lang="fr">
       <head>
@@ -16,15 +20,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
+
       <body>
-        {children}
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <FloatingWidgets />
+        <Footer />
+
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
-}
-
-export default function Root() {
-  return <Outlet />;
 }
