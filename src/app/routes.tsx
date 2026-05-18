@@ -10,22 +10,23 @@ export default [
     route("zones-desservies", "./pages/ZonesDesservies.tsx"),
     route("avis-clients", "./pages/AvisClients.tsx"),
 
-    // ── Pages Taxi principales ──
     route("taxi-narbonne", "./pages/TaxiNarbonne.tsx"),
     route("taxi-gare-narbonne", "./pages/TaxiGare.tsx"),
-    route("taxi-gare-de-narbonne", "./pages/TaxiGare.tsx"),
-    route("taxi-narbonne-reservation-24h-gare-aeroport", "./pages/TaxiGare.tsx"),
 
     route("reserver-taxi-narbonne", "./pages/Reservation.tsx"),
 
-    // ── Pages Aéroports ──
+    // ── Alias Taxi Gare (IMPORTANT SEO / ancien liens) ──
+    route("taxi-gare-de-narbonne", "./pages/TaxiGare.tsx"),
+    route("taxi-narbonne-reservation-24h-gare-aeroport", "./pages/TaxiGare.tsx"),
+
+    // ── Aéroports ──
     route("taxi-aeroport-montpellier", "./pages/AirportPage.tsx"),
     route("taxi-aeroport-toulouse", "./pages/AirportPage.tsx"),
     route("taxi-aeroport-carcassonne", "./pages/AirportPage.tsx"),
     route("taxi-aeroport-beziers", "./pages/AirportPage.tsx"),
     route("taxi-aeroport-barcelone", "./pages/AirportPage.tsx"),
 
-    // ── Pages Zones desservies ──
+    // ── Zones desservies ──
     route("taxi-gruissan", "./pages/GeoPage.tsx"),
     route("taxi-leucate", "./pages/GeoPage.tsx"),
     route("taxi-sigean", "./pages/GeoPage.tsx"),
