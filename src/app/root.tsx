@@ -8,9 +8,9 @@ import {
 
 import "../styles/index.css";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import FloatingWidgets from "./components/FloatingWidgets";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { FloatingWidgets } from "./components/FloatingWidgets";
 
 export default function Root() {
   return (
