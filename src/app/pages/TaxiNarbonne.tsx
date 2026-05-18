@@ -27,9 +27,6 @@ const faqs = [
   { q: 'Taxi Narbonne pour les aéroports ?', a: 'Nous desservons les aéroports de Montpellier (1h, ~130€), Toulouse-Blagnac (1h30, ~185€), Carcassonne (45 min, ~90€) et Barcelone (2h30, ~275€).' },
 ];
 
-export function TaxiNarbonne() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen pt-28">
       <SEOHead
