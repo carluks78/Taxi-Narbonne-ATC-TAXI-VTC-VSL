@@ -12,6 +12,10 @@ import {
 import { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 
+export async function loader() {
+  return null;
+}
+
 const PHONE = '0768303303';
 const PHONE_DISPLAY = '07 68 30 33 03';
 const WHATSAPP = 'https://wa.me/33768303303';
