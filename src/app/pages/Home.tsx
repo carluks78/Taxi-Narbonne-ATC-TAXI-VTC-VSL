@@ -9,10 +9,6 @@ import {
 import heroImg from '../../imports/taxi_narbonne_gare_vsl.png';
 import { SEOHead } from '../components/SEOHead';
 
-export async function loader() {
-  return null;
-}
-
 const PHONE = '0768303303';
 const PHONE_DISPLAY = '07 68 30 33 03';
 const WHATSAPP = 'https://wa.me/33768303303?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20un%20taxi.';
