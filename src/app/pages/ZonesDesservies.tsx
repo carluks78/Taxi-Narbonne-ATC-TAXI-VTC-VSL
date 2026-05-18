@@ -4,7 +4,7 @@ import { MapPin, Phone } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 
 export async function loader() {
-  return {};
+  return null;
 }
 
 const PHONE = '0768303303';
