@@ -20,9 +20,7 @@ export default function Root() {
       </head>
 
       <body>
-        <Layout>
-          <Outlet />
-        </Layout>
+        <Outlet />
 
         <ScrollRestoration />
         <Scripts />
