@@ -1,4 +1,10 @@
-// ── Pages principales ──
+import { type RouteConfig, index, route } from "@react-router/dev/routes";
+
+export default [
+  route("", "./routes/_layout.tsx", [
+    index("./pages/Home.tsx"),
+
+    // Pages principales
     route("services", "./pages/Services.tsx"),
     route("contact", "./pages/Contact.tsx"),
     route("zones-desservies", "./pages/ZonesDesservies.tsx"),
@@ -6,21 +12,23 @@
 
     route("taxi-narbonne", "./pages/TaxiNarbonne.tsx"),
     route("taxi-gare-narbonne", "./pages/TaxiGare.tsx"),
-
     route("reserver-taxi-narbonne", "./pages/Reservation.tsx"),
 
-    // ── Alias Taxi Gare (IMPORTANT SEO / ancien liens) ──
+    // Alias gare
     route("taxi-gare-de-narbonne", "./pages/TaxiGare.tsx"),
-    route("taxi-narbonne-reservation-24h-gare-aeroport", "./pages/TaxiGare.tsx"),
+    route(
+      "taxi-narbonne-reservation-24h-gare-aeroport",
+      "./pages/TaxiGare.tsx"
+    ),
 
-    // ── Aéroports ──
+    // Aéroports
     route("taxi-aeroport-montpellier", "./pages/AirportPage.tsx"),
     route("taxi-aeroport-toulouse", "./pages/AirportPage.tsx"),
     route("taxi-aeroport-carcassonne", "./pages/AirportPage.tsx"),
     route("taxi-aeroport-beziers", "./pages/AirportPage.tsx"),
     route("taxi-aeroport-barcelone", "./pages/AirportPage.tsx"),
 
-    // ── Zones desservies ──
+    // Zones
     route("taxi-gruissan", "./pages/GeoPage.tsx"),
     route("taxi-leucate", "./pages/GeoPage.tsx"),
     route("taxi-sigean", "./pages/GeoPage.tsx"),
@@ -42,7 +50,7 @@
     route("taxi-armissan", "./pages/GeoPage.tsx"),
     route("taxi-le-somail", "./pages/GeoPage.tsx"),
 
-    // ── 404 ──
+    // 404
     route("*", "./pages/NotFound.tsx"),
   ]),
-];
+] satisfies RouteConfig;
