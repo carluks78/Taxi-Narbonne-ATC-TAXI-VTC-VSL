@@ -3,7 +3,7 @@
 // En SSR, React Router injecte les params directement — plus besoin de parser l'URL
 
 import { motion } from 'motion/react';
-import { Link, useParams } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import {
   Phone, MessageCircle, MapPin, CheckCircle,
   ChevronDown, ChevronUp, Star, Clock, Shield, Award
@@ -333,11 +333,11 @@ const cityData: Record<string, CityData> = {
 export default function GeoPage() {
   // ✅ CHANGEMENT CLÉ : useParams() au lieu de useLocation().pathname
   // React Router v7 SSR injecte le slug directement dans les params
-  const params = useParams();
+  const location = useLocation();
 
-  // Reconstruit le slug depuis les segments de route
-  // Ex: route "taxi-port-la-nouvelle" → params["*"] ou segment de route
-  const slug = Object.values(params)[0] ?? '';
+const slug = location.pathname
+  .replace('/taxi-', '')
+  .replace(/^\/+/, '');
 
   const data = cityData[slug] ?? null;
   const [openFaq, setOpenFaq] = useState<number | null>(null);
