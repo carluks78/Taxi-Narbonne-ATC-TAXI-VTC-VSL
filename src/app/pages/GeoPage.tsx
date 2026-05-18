@@ -330,7 +330,7 @@ const cityData: Record<string, CityData> = {
 };
 
 // ─── Composant principal ──────────────────────────────────────────────────────
-export function default GeoPage() {
+export default function GeoPage() {
   // ✅ CHANGEMENT CLÉ : useParams() au lieu de useLocation().pathname
   // React Router v7 SSR injecte le slug directement dans les params
   const params = useParams();
