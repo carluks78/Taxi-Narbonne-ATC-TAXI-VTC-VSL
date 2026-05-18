@@ -5,13 +5,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+
 import "../styles/index.css";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingWidgets from "./components/FloatingWidgets";
 
-export default function Root() {
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <head>
@@ -22,11 +23,18 @@ export default function Root() {
       </head>
 
       <body>
+        {/* HEADER global */}
         <Header />
+
+        {/* contenu des pages */}
         <main>
-          <Outlet />
+          {children}
         </main>
+
+        {/* widgets flottants (whatsapp / call / etc) */}
         <FloatingWidgets />
+
+        {/* FOOTER global */}
         <Footer />
 
         <ScrollRestoration />
@@ -34,4 +42,8 @@ export default function Root() {
       </body>
     </html>
   );
+}
+
+export default function Root() {
+  return <Outlet />;
 }
