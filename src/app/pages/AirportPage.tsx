@@ -122,7 +122,7 @@ const airportData: Record<string, AirportData> = {
   },
 };
 
-export function AirportPage() {
+export default function AirportPage() {
   // Extract slug from pathname: /taxi-aeroport-montpellier → montpellier
   const params = useParams();
 const slug = Object.values(params)[0] ?? '';
