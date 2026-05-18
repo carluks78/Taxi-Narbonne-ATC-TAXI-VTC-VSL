@@ -4,18 +4,13 @@ export default [
   route("", "./routes/_layout.tsx", [
     index("./pages/Home.tsx"),
 
-    // ── Pages principales ──
     route("services", "./pages/Services.tsx"),
     route("contact", "./pages/Contact.tsx"),
     route("zones-desservies", "./pages/ZonesDesservies.tsx"),
     route("avis-clients", "./pages/AvisClients.tsx"),
-
     route("taxi-narbonne", "./pages/TaxiNarbonne.tsx"),
     route("taxi-gare-narbonne", "./pages/TaxiGare.tsx"),
-
     route("reserver-taxi-narbonne", "./pages/Reservation.tsx"),
-
-    // ── Alias Taxi Gare (IMPORTANT SEO / ancien liens) ──
     route("taxi-gare-de-narbonne", "./pages/TaxiGare.tsx"),
     route("taxi-narbonne-reservation-24h-gare-aeroport", "./pages/TaxiGare.tsx"),
 
@@ -48,7 +43,6 @@ export default [
     route("taxi-armissan", "./pages/GeoPage.tsx"),
     route("taxi-le-somail", "./pages/GeoPage.tsx"),
 
-    // ── 404 ──
     route("*", "./pages/NotFound.tsx"),
   ]),
 ];
