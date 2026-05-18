@@ -8,10 +8,6 @@ import { FloatingWidgets } from "./FloatingWidgets";
 export function Layout() {
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#060F1E" }}>
       <Header />
