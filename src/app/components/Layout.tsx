@@ -8,12 +8,8 @@ import { FloatingWidgets } from "./FloatingWidgets";
 export function Layout() {
   const { pathname } = useLocation();
 
-  // 🔥 toujours remonter en haut quand tu changes de page
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return (
