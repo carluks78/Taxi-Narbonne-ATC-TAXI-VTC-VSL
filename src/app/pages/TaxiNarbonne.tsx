@@ -4,6 +4,14 @@ import { Phone, MessageCircle, CheckCircle, MapPin, Star, ChevronDown, ChevronUp
 import { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 
+export default function TaxiNarbonne() {
+  return (
+    <div style={{ minHeight: "100vh", background: "yellow" }}>
+      <h1>TAXI NARBONNE PAGE TEST</h1>
+    </div>
+  );
+}
+
 const PHONE = '0768303303';
 const PHONE_DISPLAY = '07 68 30 33 03';
 const WHATSAPP = 'https://wa.me/33768303303';
