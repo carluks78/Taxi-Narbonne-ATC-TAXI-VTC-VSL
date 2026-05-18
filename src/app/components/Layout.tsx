@@ -5,7 +5,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { FloatingWidgets } from "./FloatingWidgets";
 
-export function Layout() {
+export default function Layout() {
   const { pathname } = useLocation();
 
   return (
