@@ -3,6 +3,10 @@ import { Link } from 'react-router';
 import { Star, MapPin, Phone } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 
+export async function loader() {
+  return {};
+}
+
 const PHONE = '0768303303';
 const PHONE_DISPLAY = '07 68 30 33 03';
 const TEAL = '#3AB4B1';
