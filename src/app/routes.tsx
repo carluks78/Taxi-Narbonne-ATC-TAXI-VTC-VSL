@@ -9,6 +9,7 @@ export default [
     route("zones-desservies", "./pages/ZonesDesservies.tsx"),
     route("avis-clients", "./pages/AvisClients.tsx"),
     route("taxi-narbonne", "./pages/TaxiNarbonne.tsx"),
+    route("taxi-gare-narbonne", "./pages/TaxiGare.tsx"),
     route("reserver-taxi-narbonne", "./pages/Reservation.tsx"),
 
     route("*", "./pages/NotFound.tsx"),
