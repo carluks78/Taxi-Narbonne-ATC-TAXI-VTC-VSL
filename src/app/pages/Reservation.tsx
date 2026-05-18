@@ -11,6 +11,10 @@ import {
   RefreshCw, ChevronDown, Navigation, Award, PawPrint,
 } from 'lucide-react';
 
+export async function loader() {
+  return {};
+}
+
 // ── Constants ─────────────────────────────────────────────────────────────────
 const TEAL = '#3AB4B1';
 const TEAL_DARK = '#2A9490';
