@@ -4,14 +4,6 @@ import { Phone, MessageCircle, CheckCircle, MapPin, Star, ChevronDown, ChevronUp
 import { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 
-export default function TaxiNarbonne() {
-  return (
-    <div style={{ minHeight: "100vh", background: "yellow" }}>
-      <h1>TAXI NARBONNE PAGE TEST</h1>
-    </div>
-  );
-}
-
 const PHONE = '0768303303';
 const PHONE_DISPLAY = '07 68 30 33 03';
 const WHATSAPP = 'https://wa.me/33768303303';
@@ -27,8 +19,15 @@ const faqs = [
   { q: 'Taxi Narbonne pour les aéroports ?', a: 'Nous desservons les aéroports de Montpellier (1h, ~130€), Toulouse-Blagnac (1h30, ~185€), Carcassonne (45 min, ~90€) et Barcelone (2h30, ~275€).' },
 ];
 
-export function TaxiNarbonne() {
+export default function TaxiNarbonne() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  return (
+    <div className="min-h-screen pt-28" style={{ backgroundColor: '#060F1E' }}>
+      {/* ton contenu complet */}
+    </div>
+  );
+}
 
   return (
     <div style={{ backgroundColor: '#060F1E' }} className="min-h-screen pt-28">
