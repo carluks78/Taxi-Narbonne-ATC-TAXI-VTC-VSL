@@ -11,10 +11,6 @@ import {
 import { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 
-export async function loader() {
-  return null;
-}
-
 const PHONE = '0768303303';
 const PHONE_DISPLAY = '07 68 30 33 03';
 const TEAL = '#3AB4B1';
@@ -334,7 +330,7 @@ const cityData: Record<string, CityData> = {
 };
 
 // ─── Composant principal ──────────────────────────────────────────────────────
-export function GeoPage() {
+export function default GeoPage() {
   // ✅ CHANGEMENT CLÉ : useParams() au lieu de useLocation().pathname
   // React Router v7 SSR injecte le slug directement dans les params
   const params = useParams();
