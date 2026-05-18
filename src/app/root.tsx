@@ -7,7 +7,6 @@ import {
 } from "react-router";
 
 import "../styles/index.css";
-import { Layout } from "./components/Layout";
 
 export default function Root() {
   return (
