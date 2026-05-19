@@ -576,15 +576,51 @@ export function Reservation() {
   };
 
   const taxiServiceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'ATC TAXI VTC Narbonne – Réservation en ligne',
-    description: 'Réservez votre taxi à Narbonne : aéroport, gare SNCF, hôpital, longue distance. 24h/24 7j/7. Conventionné CPAM.',
-    telephone: '+33768303303',
-    email: 'atctaxi11@gmail.com',
-    url: 'https://atctaxivtcnarbonne.fr/reserver-taxi-narbonne',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '48' },
-  };
+  '@context': 'https://schema.org',
+  '@type': 'TaxiService',
+
+  name: 'ATC TAXI VTC Narbonne – Réservation en ligne',
+
+  description:
+    'Réservez votre taxi à Narbonne : aéroport, gare SNCF, hôpital, longue distance. 24h/24 7j/7. Conventionné CPAM.',
+
+  telephone: '+33768303303',
+
+  email: 'atctaxi11@gmail.com',
+
+  url: 'https://atctaxivtcnarbonne.fr/reserver-taxi-narbonne',
+
+  image: 'https://atctaxivtcnarbonne.fr/atc-taxi-narbonne-og-image.jpg',
+
+  priceRange: '€€',
+
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Narbonne',
+    addressRegion: 'Occitanie',
+    postalCode: '11100',
+    addressCountry: 'FR',
+  },
+
+  areaServed: [
+    'Narbonne',
+    'Gruissan',
+    'Leucate',
+    'Port-la-Nouvelle',
+    'Sigean',
+    'Béziers',
+    'Carcassonne',
+    'Montpellier',
+    'Perpignan',
+    'Barcelone',
+  ],
+
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '48',
+  },
+};
 
   if (submitted && bookingData) {
     return <SuccessScreen data={bookingData} onReset={() => { setSubmitted(false); setBookingData(null); }} />;
