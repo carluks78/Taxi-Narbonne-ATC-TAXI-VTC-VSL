@@ -577,7 +577,7 @@ export function Reservation() {
 
   const taxiServiceSchema = {
   '@context': 'https://schema.org',
-  '@type': 'TaxiService',
+  "@type": "LocalBusiness",
 
   name: 'ATC TAXI VTC Narbonne – Réservation en ligne',
 
