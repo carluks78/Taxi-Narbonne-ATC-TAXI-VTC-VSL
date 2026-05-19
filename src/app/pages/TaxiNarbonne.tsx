@@ -31,7 +31,7 @@ export function TaxiNarbonne() {
         keywords="taxi narbonne, taxi narbonne 24h, vtc narbonne, taxi narbonne pas cher, réserver taxi narbonne, taxi narbonne aéroport, taxi narbonne gare, taxi narbonne conventionné, chauffeur narbonne, narbonne taxi"
         schema={{
           '@context': 'https://schema.org',
-          '@type': 'TaxiService',
+          "@type": "LocalBusiness",
           name: 'Taxi Narbonne – ATC TAXI VTC',
           telephone: '+33768303303',
           address: { '@type': 'PostalAddress', addressLocality: 'Narbonne', postalCode: '11100', addressCountry: 'FR' },
