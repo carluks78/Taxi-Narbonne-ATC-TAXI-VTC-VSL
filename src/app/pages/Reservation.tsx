@@ -577,7 +577,7 @@ export function Reservation() {
 
   const taxiServiceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'TaxiService',
+    '@type': 'LocalBusiness',
     name: 'ATC TAXI VTC Narbonne – Réservation en ligne',
     description: 'Réservez votre taxi à Narbonne : aéroport, gare SNCF, hôpital, longue distance. 24h/24 7j/7. Conventionné CPAM.',
     telephone: '+33768303303',
