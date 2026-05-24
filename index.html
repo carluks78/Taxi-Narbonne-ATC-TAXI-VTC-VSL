@@ -30,7 +30,11 @@
   <link rel="canonical" href="https://www.atc-taxi-vtc.com/" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
   <!-- Open Graph (Facebook, WhatsApp, Messenger etc.) -->
   <meta property="og:type" content="website" />
@@ -55,19 +59,23 @@
   <!-- Données structurées -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "TaxiService",
-    "name": "ATC TAXI VTC VSL",
-    "url": "https://www.atc-taxi-vtc.com/",
-    "description": "Service de taxi disponible 24h/24 à Narbonne pour transferts gare, aéroport, VSL et transport médical.",
-    "areaServed": "Narbonne",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Narbonne",
-      "addressRegion": "Occitanie",
-      "addressCountry": "FR"
-    }
+  "@context": "https://schema.org",
+  "@type": ["TaxiService", "LocalBusiness"],
+  "name": "ATC TAXI VTC VSL",
+  "url": "https://www.atc-taxi-vtc.com/",
+  "telephone": "+33768303303",
+  "foundingDate": "1990",
+  "description": "Service de taxi disponible 24h/24 à Narbonne pour transferts gare, aéroport, VSL et transport médical.",
+  "areaServed": "Narbonne",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "18 Rue André Cayatte",
+    "addressLocality": "Narbonne",
+    "postalCode": "11100",
+    "addressRegion": "Occitanie",
+    "addressCountry": "FR"
   }
+}
   </script>
 
   <!-- Styles -->
