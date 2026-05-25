@@ -157,20 +157,6 @@ export function FloatingWidgets() {
 
   return (
     <>
-      {/* ── Bouton téléphone ── */}
-      <motion.a
-        href={`tel:${PHONE}`}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1, type: 'spring' }}
-        className="fixed bottom-24 left-4 z-40 flex items-center justify-center w-14 h-14 rounded-full shadow-2xl text-white"
-        style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
-        aria-label={`Appeler ATC Taxi ${PHONE_DISPLAY}`}
-      >
-        <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }}>
-          <Phone size={22} />
-        </motion.div>
-      </motion.a>
 
       {/* ── Widget rappel ── */}
       <AnimatePresence>
