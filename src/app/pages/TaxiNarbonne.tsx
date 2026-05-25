@@ -12,10 +12,10 @@ const TEAL_DARK = '#2A9490';
 
 const faqs = [
   { q: 'Comment appeler un taxi à Narbonne ?', a: `Appelez le ${PHONE_DISPLAY} disponible 24h/24 7j/7. Réponse garantie en moins de 5 minutes. Ou envoyez un message WhatsApp pour une réponse immédiate.` },
-  { q: 'Quel est le tarif d\'un taxi à Narbonne ?', a: 'Les tarifs varient selon la distance et l\'horaire. Comptez environ 15-25€ pour un trajet en ville, 40-60€ pour la gare vers un hôtel extérieur. Contactez-nous pour un devis précis.' },
+  { q: "Quel est le tarif d'un taxi à Narbonne ?", a: "Les tarifs varient selon la distance et l'horaire. Comptez environ 15-25€ pour un trajet en ville, 40-60€ pour la gare vers un hôtel extérieur. Contactez-nous pour un devis précis." },
   { q: 'Le taxi de Narbonne est-il disponible la nuit ?', a: 'Oui, ATC TAXI VTC Narbonne est disponible 24h/24, 7j/7, y compris la nuit, les weekends et les jours fériés.' },
   { q: 'Proposez-vous le taxi conventionné à Narbonne ?', a: 'Oui, nous sommes agréés pour le transport médical conventionné CPAM. Apportez votre prescription médicale et la prise en charge est effectuée directement.' },
-  { q: 'Desservez-vous les communes autour de Narbonne ?', a: 'Oui, nous desservons Gruissan, Leucate, Sigean, Port-la-Nouvelle, Peyriac-de-Mer, Coursan, Vinassan, Bages et toutes les communes de l\'Aude.' },
+  { q: 'Desservez-vous les communes autour de Narbonne ?', a: "Oui, nous desservons Gruissan, Leucate, Sigean, Port-la-Nouvelle, Peyriac-de-Mer, Coursan, Vinassan, Bages et toutes les communes de l'Aude." },
   { q: 'Taxi Narbonne pour les aéroports ?', a: 'Nous desservons les aéroports de Montpellier (1h, ~130€), Toulouse-Blagnac (1h30, ~185€), Carcassonne (45 min, ~90€) et Barcelone (2h30, ~275€).' },
 ];
 
@@ -28,7 +28,7 @@ function CTABar() {
         </p>
         <div className="flex gap-2">
           
-            href={`tel:${PHONE_DISPLAY.replace(/\s/g, "")}`}
+            href={`tel:${PHONE}`}
             className="flex items-center gap-1.5 bg-[#2DBFBA] text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-[#26a8a3] transition-colors"
           >
             <Phone size={13} />
@@ -71,7 +71,7 @@ export function TaxiNarbonne() {
         }}
       />
 
-      {/* CTA Bar – juste sous le header */}
+      {/* CTA Bar – collée sous le header */}
       <CTABar />
 
       {/* Hero */}
@@ -91,13 +91,19 @@ export function TaxiNarbonne() {
               ATC TAXI VTC Narbonne est votre taxi de confiance dans l'Aude. Taxi conventionné CPAM, transferts gare SNCF de Narbonne, aéroports Montpellier, Toulouse et Carcassonne. Service disponible 24h/24, 7j/7, week-ends et jours fériés.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href={`tel:${PHONE}`}
+              
+                href={`tel:${PHONE}`}
                 className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-white text-lg"
-                style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}>
+                style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
+              >
                 <Phone size={18} /> {PHONE_DISPLAY}
               </a>
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-white text-lg bg-green-600 hover:bg-green-500 transition-colors">
+              
+                href={WHATSAPP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-white text-lg bg-green-600 hover:bg-green-500 transition-colors"
+              >
                 <MessageCircle size={18} /> WhatsApp
               </a>
             </div>
@@ -119,8 +125,11 @@ export function TaxiNarbonne() {
             'Chauffeurs professionnels certifiés',
             'Tarifs transparents sans surprise',
           ].map((point) => (
-            <div key={point} className="flex items-center gap-3 p-4 rounded-xl"
-              style={{ background: '#0D2040', border: `1px solid rgba(58,180,177,0.15)` }}>
+            <div
+              key={point}
+              className="flex items-center gap-3 p-4 rounded-xl"
+              style={{ background: '#0D2040', border: `1px solid rgba(58,180,177,0.15)` }}
+            >
               <CheckCircle size={16} className="flex-shrink-0" style={{ color: TEAL }} />
               <span className="text-gray-200 text-sm">{point}</span>
             </div>
@@ -156,8 +165,11 @@ export function TaxiNarbonne() {
             </p>
             <div className="flex flex-wrap gap-2">
               {['Narbonne', 'Gruissan', 'Leucate', 'Sigean', 'Port-la-Nouvelle', 'Carcassonne', 'Béziers', 'Montpellier'].map((city) => (
-                <span key={city} className="flex items-center gap-1 text-xs text-gray-300 px-3 py-1.5 rounded-full"
-                  style={{ background: `rgba(58,180,177,0.1)`, border: `1px solid rgba(58,180,177,0.25)` }}>
+                <span
+                  key={city}
+                  className="flex items-center gap-1 text-xs text-gray-300 px-3 py-1.5 rounded-full"
+                  style={{ background: `rgba(58,180,177,0.1)`, border: `1px solid rgba(58,180,177,0.25)` }}
+                >
                   <MapPin size={10} style={{ color: TEAL }} /> {city}
                 </span>
               ))}
@@ -176,7 +188,9 @@ export function TaxiNarbonne() {
           {/* Stars */}
           <div className="p-6 rounded-2xl text-center" style={{ background: '#0D2040', border: `1px solid rgba(58,180,177,0.3)` }}>
             <div className="flex justify-center gap-1 mb-2">
-              {[1,2,3,4,5].map(s => <Star key={s} size={24} style={{ fill: TEAL, color: TEAL }} />)}
+              {[1, 2, 3, 4, 5].map((s) => (
+                <Star key={s} size={24} style={{ fill: TEAL, color: TEAL }} />
+              ))}
             </div>
             <p className="text-white font-bold text-lg">Note 5/5 – Plus de 200 avis clients vérifiés</p>
             <p className="text-gray-400 text-sm mt-1">Taxi Narbonne le mieux noté de l'Aude</p>
@@ -188,8 +202,15 @@ export function TaxiNarbonne() {
           <h2 className="text-white font-bold mb-6" style={{ fontSize: '1.5rem' }}>FAQ – Taxi Narbonne</h2>
           <div className="space-y-3">
             {faqs.map((faq, i) => (
-              <div key={i} className="rounded-xl overflow-hidden" style={{ background: '#0D2040', border: `1px solid ${openFaq === i ? `rgba(58,180,177,0.4)` : 'rgba(255,255,255,0.08)'}` }}>
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-5 text-left">
+              <div
+                key={i}
+                className="rounded-xl overflow-hidden"
+                style={{ background: '#0D2040', border: `1px solid ${openFaq === i ? 'rgba(58,180,177,0.4)' : 'rgba(255,255,255,0.08)'}` }}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 text-left"
+                >
                   <span className="text-white font-semibold pr-4">{faq.q}</span>
                   {openFaq === i
                     ? <ChevronUp size={16} className="flex-shrink-0" style={{ color: TEAL }} />
@@ -217,9 +238,12 @@ export function TaxiNarbonne() {
               { label: 'Avis clients', href: '/avis-clients' },
               { label: 'Contact', href: '/contact' },
             ].map((link) => (
-              <Link key={link.href} to={link.href}
+              <Link
+                key={link.href}
+                to={link.href}
                 className="text-sm px-4 py-2 rounded-full transition-colors hover:text-white"
-                style={{ border: `1px solid rgba(58,180,177,0.3)`, color: TEAL }}>
+                style={{ border: `1px solid rgba(58,180,177,0.3)`, color: TEAL }}
+              >
                 {link.label}
               </Link>
             ))}
