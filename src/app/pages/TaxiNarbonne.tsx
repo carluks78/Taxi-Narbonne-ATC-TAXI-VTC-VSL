@@ -19,6 +19,36 @@ const faqs = [
   { q: 'Taxi Narbonne pour les aéroports ?', a: 'Nous desservons les aéroports de Montpellier (1h, ~130€), Toulouse-Blagnac (1h30, ~185€), Carcassonne (45 min, ~90€) et Barcelone (2h30, ~275€).' },
 ];
 
+function CTABar() {
+  return (
+    <div className="sticky top-16 z-30 bg-white/95 backdrop-blur border-b border-gray-200 py-2.5 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p className="text-gray-600 text-sm">
+          Taxi disponible maintenant — Réservez votre course
+        </p>
+        <div className="flex gap-2">
+          
+            href={`tel:${PHONE_DISPLAY.replace(/\s/g, "")}`}
+            className="flex items-center gap-1.5 bg-[#2DBFBA] text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-[#26a8a3] transition-colors"
+          >
+            <Phone size={13} />
+            {PHONE_DISPLAY}
+          </a>
+          
+            href={WHATSAPP}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-400 transition-colors"
+          >
+            <MessageCircle size={13} />
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function TaxiNarbonne() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -40,6 +70,9 @@ export function TaxiNarbonne() {
           description: 'Taxi Narbonne 24h/24 – Service professionnel, conventionné CPAM, transferts gare et aéroport.',
         }}
       />
+
+      {/* CTA Bar – juste sous le header */}
+      <CTABar />
 
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6" style={{ background: 'linear-gradient(180deg, #0A1931 0%, #060F1E 100%)' }}>
