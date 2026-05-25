@@ -250,7 +250,7 @@ export function Home() {
       </span>
 
       <span className="text-black text-base font-extrabold">
-        Noter ATC TAXI sur Google
+        Noter ATC TAXI VTC Narbonne sur Google
       </span>
 
       <div className="flex items-center gap-2 mt-1">
