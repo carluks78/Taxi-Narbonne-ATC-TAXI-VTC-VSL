@@ -183,21 +183,23 @@ export function FloatingWidgets() {
       </motion.a>
 
       {/* ── Bouton avis Google ── */}
-      <motion.a
-        href={GOOGLE_REVIEW_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1.6, type: 'spring' }}
-        className="fixed bottom-44 right-4 z-40 flex items-center gap-2 px-3 py-2 rounded-full shadow-2xl"
-        style={{ background: '#ffffff', border: '1px solid #dadce0' }}
-        aria-label="Laisser un avis Google"
-      >
-        <GoogleGLogo size={16} />
-        <span className="text-xs font-semibold text-gray-800 whitespace-nowrap">Laisser un avis</span>
-        <span className="text-yellow-400 text-xs">★★★★★</span>
-      </motion.a>
+     <motion.a
+  href={GOOGLE_REVIEW_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  initial={{ scale: 0 }}
+  animate={{ scale: 1 }}
+  transition={{ delay: 1.6, type: 'spring' }}
+  className="fixed bottom-44 left-4 z-40 flex items-center gap-2 px-3 py-2 rounded-full shadow-2xl"
+  style={{ background: '#ffffff', border: '1px solid #dadce0' }}
+  aria-label="Laisser un avis Google"
+>
+  <GoogleGLogo size={16} />
+  <span className="text-xs font-semibold text-gray-800 whitespace-nowrap">
+    Laisser un avis
+  </span>
+  <span className="text-yellow-400 text-xs">★★★★★</span>
+</motion.a>
 
       {/* ── Widget rappel ── */}
       <AnimatePresence>
