@@ -228,7 +228,7 @@ export function FloatingWidgets() {
                   <MessageCircle size={16} className="text-green-700" />
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm">ATC TAXI Narbonne</p>
+                  <p className="text-white font-bold text-sm">ATC TAXI VTC Narbonne</p>
                   <p className="text-green-200 text-xs">
                     ● {lang ? ONLINE_LABEL[lang] : 'En ligne maintenant'}
                   </p>
