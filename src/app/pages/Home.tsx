@@ -215,16 +215,6 @@ export function Home() {
       <Phone size={20} />
       Appeler maintenant
     </a>
-
-    <a
-      href={WHATSAPP}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white text-lg bg-green-600 shadow-2xl hover:bg-green-500 transition-all hover:scale-105"
-    >
-      <MessageCircle size={20} />
-      WhatsApp
-    </a>
   </div>
 
   {/* GOOGLE AVIS */}
