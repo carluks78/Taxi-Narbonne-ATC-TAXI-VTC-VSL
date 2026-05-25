@@ -196,34 +196,38 @@ export function Home() {
             className="text-gray-300 max-w-2xl mx-auto mb-8"
             style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', lineHeight: 1.7 }}
           >
-            ATC TAXI VTC Narbonne – Votre taxi conventionné CPAM, transferts gare SNCF et aéroports (Montpellier, Toulouse, Carcassonne, Barcelone). Service taxi Aude et Hérault, disponible 24h/24, 7j/7. Réservation immédiate.
+             ATC TAXI VTC Narbonne – Votre taxi conventionné CPAM, transferts gare SNCF et aéroports (Montpellier, Toulouse, Carcassonne, Barcelone). Service taxi Aude et Hérault, disponible 24h/24, 7j/7. Réservation immédiate.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <a
-              href={`tel:${PHONE}`}
-              className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white text-lg shadow-2xl transition-all hover:scale-105"
-              style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
-            >
-              <Phone size={20} />
-              Appeler maintenant
-            </a>
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white text-lg bg-green-600 shadow-2xl hover:bg-green-500 transition-all hover:scale-105"
-            >
-              <MessageCircle size={20} />
-              WhatsApp
-            </a>
-          </motion.div>
-          {/* GOOGLE AVIS */}
+         <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.3 }}
+  className="flex flex-col items-center gap-4"
+>
+  {/* LIGNE 1 */}
+  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <a
+      href={`tel:${PHONE}`}
+      className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white text-lg shadow-2xl transition-all hover:scale-105"
+      style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
+    >
+      <Phone size={20} />
+      Appeler maintenant
+    </a>
+
+    <a
+      href={WHATSAPP}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white text-lg bg-green-600 shadow-2xl hover:bg-green-500 transition-all hover:scale-105"
+    >
+      <MessageCircle size={20} />
+      WhatsApp
+    </a>
+  </div>
+
+  {/* GOOGLE AVIS */}
   <a
     href={GOOGLE_REVIEW_URL}
     target="_blank"
