@@ -222,7 +222,7 @@ export function Home() {
               <MessageCircle size={20} />
               WhatsApp
             </a>
-          </div>
+          </motion.div>
           {/* GOOGLE AVIS */}
   <a
     href={GOOGLE_REVIEW_URL}
