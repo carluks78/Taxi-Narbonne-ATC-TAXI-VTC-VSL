@@ -21,15 +21,129 @@ function GoogleGLogo({ size = 18 }: { size?: number }) {
   );
 }
 
-const quickMessages = [
-  { label: '🚖 Réserver un taxi', msg: 'Bonjour, je souhaite réserver un taxi.' },
-  { label: '🚉 Taxi Gare Narbonne', msg: 'Bonjour, j\'ai besoin d\'un taxi pour la gare de Narbonne.' },
-  { label: '🏥 Taxi conventionné', msg: 'Bonjour, je cherche un taxi conventionné CPAM.' },
-  { label: '✈️ Taxi aéroport', msg: 'Bonjour, je souhaite un taxi pour l\'aéroport.' },
+// ─── LANGUES ───────────────────────────────────────────────────────────────
+type LangKey = 'fr' | 'en' | 'es' | 'pt' | 'de' | 'it' | 'nl' | 'ar';
+
+const LANGUAGES: { key: LangKey; flag: string; label: string }[] = [
+  { key: 'fr', flag: '🇫🇷', label: 'Français' },
+  { key: 'en', flag: '🇬🇧', label: 'English' },
+  { key: 'es', flag: '🇪🇸', label: 'Español' },
+  { key: 'pt', flag: '🇵🇹', label: 'Português' },
+  { key: 'de', flag: '🇩🇪', label: 'Deutsch' },
+  { key: 'it', flag: '🇮🇹', label: 'Italiano' },
+  { key: 'nl', flag: '🇳🇱', label: 'Nederlands' },
+  { key: 'ar', flag: '🇲🇦', label: 'العربية' },
 ];
 
+type QuickMsg = { label: string; msg: string };
+
+const QUICK_MESSAGES: Record<LangKey, QuickMsg[]> = {
+  fr: [
+    { label: '🚖 Réserver un taxi maintenant', msg: 'Bonjour, je souhaite réserver un taxi maintenant. Pouvez-vous me prendre en charge ?' },
+    { label: '✈️ Transfert aéroport', msg: "Bonjour, j'ai besoin d'un taxi pour un transfert aéroport. Pouvez-vous m'aider ?" },
+    { label: '🚉 Taxi gare de Narbonne', msg: "Bonjour, j'ai besoin d'un taxi pour la gare de Narbonne. Quelle est votre disponibilité ?" },
+    { label: '💊 Transport médical CPAM', msg: "Bonjour, j'ai besoin d'un transport médical conventionné CPAM. Êtes-vous disponible ?" },
+    { label: '💶 Demander un tarif', msg: 'Bonjour, pouvez-vous m\'indiquer le tarif pour un trajet ?' },
+  ],
+  en: [
+    { label: '🚖 Book a taxi now', msg: 'Hello, I would like to book a taxi right now. Can you pick me up?' },
+    { label: '✈️ Airport transfer', msg: 'Hello, I need a taxi for an airport transfer. Can you help me?' },
+    { label: '🚉 Narbonne train station', msg: 'Hello, I need a taxi to Narbonne train station. Are you available?' },
+    { label: '🏨 Hotel transfer', msg: 'Hello, I need a taxi transfer to my hotel. Can you assist me?' },
+    { label: '💶 Get a price quote', msg: 'Hello, could you give me a price for a journey?' },
+  ],
+  es: [
+    { label: '🚖 Reservar un taxi ahora', msg: 'Hola, me gustaría reservar un taxi ahora mismo. ¿Puede recogerme?' },
+    { label: '✈️ Traslado al aeropuerto', msg: 'Hola, necesito un taxi para un traslado al aeropuerto. ¿Puede ayudarme?' },
+    { label: '🚉 Estación de tren Narbona', msg: 'Hola, necesito un taxi a la estación de tren de Narbona. ¿Está disponible?' },
+    { label: '🏨 Traslado al hotel', msg: 'Hola, necesito un taxi para ir a mi hotel. ¿Puede asistirme?' },
+    { label: '💶 Pedir un presupuesto', msg: 'Hola, ¿podría darme el precio para un trayecto?' },
+  ],
+  pt: [
+    { label: '🚖 Reservar um táxi agora', msg: 'Olá, gostaria de reservar um táxi agora. Pode me buscar?' },
+    { label: '✈️ Transfer para o aeroporto', msg: 'Olá, preciso de um táxi para o aeroporto. Pode ajudar-me?' },
+    { label: '🚉 Estação de comboios de Narbonne', msg: 'Olá, preciso de um táxi para a estação de Narbonne. Está disponível?' },
+    { label: '🏨 Transfer para o hotel', msg: 'Olá, preciso de um táxi para o meu hotel. Pode ajudar?' },
+    { label: '💶 Pedir um orçamento', msg: 'Olá, pode dar-me o preço para uma viagem?' },
+  ],
+  de: [
+    { label: '🚖 Taxi jetzt buchen', msg: 'Hallo, ich möchte jetzt ein Taxi buchen. Können Sie mich abholen?' },
+    { label: '✈️ Flughafentransfer', msg: 'Hallo, ich brauche ein Taxi für einen Flughafentransfer. Können Sie helfen?' },
+    { label: '🚉 Bahnhof Narbonne', msg: 'Hallo, ich brauche ein Taxi zum Bahnhof Narbonne. Sind Sie verfügbar?' },
+    { label: '🏨 Hoteltransfer', msg: 'Hallo, ich brauche ein Taxi zu meinem Hotel. Können Sie helfen?' },
+    { label: '💶 Preis anfragen', msg: 'Hallo, können Sie mir den Preis für eine Fahrt nennen?' },
+  ],
+  it: [
+    { label: '🚖 Prenota un taxi ora', msg: 'Ciao, vorrei prenotare un taxi adesso. Può venire a prendermi?' },
+    { label: '✈️ Transfer aeroporto', msg: "Ciao, ho bisogno di un taxi per un transfer in aeroporto. Può aiutarmi?" },
+    { label: '🚉 Stazione di Narbona', msg: 'Ciao, ho bisogno di un taxi per la stazione di Narbona. È disponibile?' },
+    { label: '🏨 Transfer in hotel', msg: 'Ciao, ho bisogno di un taxi per il mio hotel. Può aiutarmi?' },
+    { label: '💶 Chiedere un preventivo', msg: 'Ciao, può darmi il prezzo per un tragitto?' },
+  ],
+  nl: [
+    { label: '🚖 Taxi nu boeken', msg: 'Hallo, ik wil nu een taxi boeken. Kunt u mij ophalen?' },
+    { label: '✈️ Luchthaventransfer', msg: 'Hallo, ik heb een taxi nodig voor een luchthaventransfer. Kunt u helpen?' },
+    { label: '🚉 Station Narbonne', msg: 'Hallo, ik heb een taxi nodig naar het station van Narbonne. Bent u beschikbaar?' },
+    { label: '🏨 Hoteltransfer', msg: 'Hallo, ik heb een taxi nodig naar mijn hotel. Kunt u helpen?' },
+    { label: '💶 Prijs opvragen', msg: 'Hallo, kunt u mij de prijs voor een rit geven?' },
+  ],
+  ar: [
+    { label: '🚖 حجز سيارة أجرة الآن', msg: 'مرحباً، أريد حجز سيارة أجرة الآن. هل يمكنك استقبالي؟' },
+    { label: '✈️ نقل إلى المطار', msg: 'مرحباً، أحتاج سيارة أجرة للمطار. هل يمكنك المساعدة؟' },
+    { label: '🚉 محطة قطار ناربون', msg: 'مرحباً، أحتاج سيارة أجرة إلى محطة ناربون. هل أنت متاح؟' },
+    { label: '🏨 نقل إلى الفندق', msg: 'مرحباً، أحتاج سيارة أجرة إلى فندقي. هل يمكنك المساعدة؟' },
+    { label: '💶 طلب سعر', msg: 'مرحباً، هل يمكنك إعطائي سعر الرحلة؟' },
+  ],
+};
+
+const GREETINGS: Record<LangKey, string> = {
+  fr: 'Bonjour 👋 Comment puis-je vous aider ?',
+  en: 'Hello 👋 How can I help you?',
+  es: 'Hola 👋 ¿Cómo puedo ayudarle?',
+  pt: 'Olá 👋 Como posso ajudá-lo?',
+  de: 'Hallo 👋 Wie kann ich Ihnen helfen?',
+  it: 'Ciao 👋 Come posso aiutarti?',
+  nl: 'Hallo 👋 Hoe kan ik u helpen?',
+  ar: 'مرحباً 👋 كيف يمكنني مساعدتك؟',
+};
+
+const QUICK_LABEL: Record<LangKey, string> = {
+  fr: 'Messages rapides :',
+  en: 'Quick messages:',
+  es: 'Mensajes rápidos:',
+  pt: 'Mensagens rápidas:',
+  de: 'Schnellnachrichten:',
+  it: 'Messaggi rapidi:',
+  nl: 'Snelle berichten:',
+  ar: 'رسائل سريعة:',
+};
+
+const ONLINE_LABEL: Record<LangKey, string> = {
+  fr: 'En ligne maintenant',
+  en: 'Online now',
+  es: 'En línea ahora',
+  pt: 'Online agora',
+  de: 'Jetzt online',
+  it: 'Online adesso',
+  nl: 'Nu online',
+  ar: 'متصل الآن',
+};
+
+const BACK_LABEL: Record<LangKey, string> = {
+  fr: '← Retour',
+  en: '← Back',
+  es: '← Volver',
+  pt: '← Voltar',
+  de: '← Zurück',
+  it: '← Indietro',
+  nl: '← Terug',
+  ar: 'رجوع ←',
+};
+
+// ─── COMPOSANT PRINCIPAL ────────────────────────────────────────────────────
 export function FloatingWidgets() {
   const [whatsappOpen, setWhatsappOpen] = useState(false);
+  const [lang, setLang] = useState<LangKey | null>(null);
   const [callbackOpen, setCallbackOpen] = useState(false);
   const [callbackPhone, setCallbackPhone] = useState('');
   const [callbackSent, setCallbackSent] = useState(false);
@@ -46,9 +160,14 @@ export function FloatingWidgets() {
     }, 3000);
   };
 
+  const closeWhatsapp = () => {
+    setWhatsappOpen(false);
+    setLang(null);
+  };
+
   return (
     <>
-      {/* Phone floating button */}
+      {/* ── Bouton téléphone ── */}
       <motion.a
         href={`tel:${PHONE}`}
         initial={{ scale: 0 }}
@@ -58,15 +177,12 @@ export function FloatingWidgets() {
         style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
         aria-label={`Appeler ATC Taxi ${PHONE_DISPLAY}`}
       >
-        <motion.div
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
+        <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }}>
           <Phone size={22} />
         </motion.div>
       </motion.a>
 
-      {/* Google Reviews floating button */}
+      {/* ── Bouton avis Google ── */}
       <motion.a
         href={GOOGLE_REVIEW_URL}
         target="_blank"
@@ -83,7 +199,7 @@ export function FloatingWidgets() {
         <span className="text-yellow-400 text-xs">★★★★★</span>
       </motion.a>
 
-      {/* Callback widget */}
+      {/* ── Widget rappel ── */}
       <AnimatePresence>
         {callbackOpen && (
           <motion.div
@@ -95,14 +211,10 @@ export function FloatingWidgets() {
           >
             <div className="px-4 py-3 flex items-center justify-between" style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}>
               <span className="text-white font-bold text-sm">Être rappelé en &lt;5 min</span>
-              <button onClick={() => setCallbackOpen(false)} className="text-white">
-                <X size={16} />
-              </button>
+              <button onClick={() => setCallbackOpen(false)} className="text-white"><X size={16} /></button>
             </div>
             {callbackSent ? (
-              <div className="p-4 text-center text-green-400">
-                ✅ Message envoyé ! On vous rappelle très vite.
-              </div>
+              <div className="p-4 text-center text-green-400">✅ Message envoyé ! On vous rappelle très vite.</div>
             ) : (
               <form onSubmit={handleCallback} className="p-4 space-y-3">
                 <p className="text-gray-300 text-xs">Laissez votre numéro, nous vous rappelons immédiatement.</p>
@@ -140,7 +252,7 @@ export function FloatingWidgets() {
         Rappel immédiat
       </motion.button>
 
-      {/* WhatsApp widget */}
+      {/* ── Widget WhatsApp multilingue ── */}
       <AnimatePresence>
         {whatsappOpen && (
           <motion.div
@@ -150,6 +262,7 @@ export function FloatingWidgets() {
             className="fixed bottom-24 right-4 z-40 w-72 rounded-2xl overflow-hidden shadow-2xl"
             style={{ background: '#111111', border: '1px solid rgba(37,211,102,0.4)' }}
           >
+            {/* Header */}
             <div className="px-4 py-3 flex items-center justify-between bg-green-700">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
@@ -157,51 +270,129 @@ export function FloatingWidgets() {
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">ATC TAXI Narbonne</p>
-                  <p className="text-green-200 text-xs">● En ligne maintenant</p>
+                  <p className="text-green-200 text-xs">
+                    ● {lang ? ONLINE_LABEL[lang] : 'En ligne maintenant'}
+                  </p>
                 </div>
               </div>
-              <button onClick={() => setWhatsappOpen(false)} className="text-white">
-                <X size={16} />
-              </button>
+              <div className="flex items-center gap-2">
+                {lang && (
+                  <button onClick={() => setLang(null)} className="text-green-200 text-xs underline">
+                    {BACK_LABEL[lang]}
+                  </button>
+                )}
+                <button onClick={closeWhatsapp} className="text-white">
+                  <X size={16} />
+                </button>
+              </div>
             </div>
+
             <div className="p-4">
-              <div
-                className="inline-block px-3 py-2 rounded-2xl rounded-tl-none text-white text-sm mb-4"
-                style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
-              >
-                Bonjour 👋 Comment puis-je vous aider ?
-              </div>
-              <p className="text-gray-400 text-xs mb-3">Messages rapides :</p>
-              <div className="space-y-2">
-                {quickMessages.map((qm) => (
-                  <a
-                    key={qm.label}
-                    href={`${WHATSAPP_BASE}?text=${encodeURIComponent(qm.msg)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setWhatsappOpen(false)}
-                    className="block w-full text-left px-3 py-2 rounded-lg text-sm text-white transition-colors hover:bg-green-900"
-                    style={{ border: '1px solid rgba(37,211,102,0.3)' }}
+              {/* Sélection de langue */}
+              {!lang ? (
+                <>
+                  <div
+                    className="inline-block px-3 py-2 rounded-2xl rounded-tl-none text-white text-sm mb-4"
+                    style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
                   >
-                    {qm.label}
-                  </a>
-                ))}
-              </div>
+                    👋 Choisissez votre langue / Choose your language
+                  </div>
+                  <div className="grid grid-cols-4 gap-2 mt-2">
+                    {LANGUAGES.map(({ key, flag, label }) => (
+                      <button
+                        key={key}
+                        onClick={() => setLang(key)}
+                        className="flex flex-col items-center justify-center py-2 rounded-xl text-white text-xl transition-all hover:scale-110 active:scale-95"
+                        style={{ border: '1px solid rgba(37,211,102,0.4)', background: 'rgba(37,211,102,0.1)' }}
+                        title={label}
+                      >
+                        {flag}
+                        <span className="text-[9px] mt-0.5 text-gray-400 leading-tight">{label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div
+                    className="inline-block px-3 py-2 rounded-2xl rounded-tl-none text-white text-sm mb-4"
+                    style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+                    dir={lang === 'ar' ? 'rtl' : 'ltr'}
+                  >
+                    {GREETINGS[lang]}
+                  </div>
+                  <p className="text-gray-400 text-xs mb-3" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+                    {QUICK_LABEL[lang]}
+                  </p>
+                  <div className="space-y-2">
+                    {QUICK_MESSAGES[lang].map((qm) => (
+                      <a
+                        key={qm.label}
+                        href={`${WHATSAPP_BASE}?text=${encodeURIComponent(qm.msg)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeWhatsapp}
+                        className="block w-full text-left px-3 py-2 rounded-lg text-sm text-white transition-colors hover:bg-green-900"
+                        style={{ border: '1px solid rgba(37,211,102,0.3)' }}
+                        dir={lang === 'ar' ? 'rtl' : 'ltr'}
+                      >
+                        {qm.label}
+                      </a>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <motion.button
-        onClick={() => setWhatsappOpen(!whatsappOpen)}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1.4, type: 'spring' }}
-        className="fixed bottom-6 right-4 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-green-600 hover:bg-green-500 shadow-2xl transition-colors"
-        aria-label="WhatsApp ATC Taxi Narbonne"
-      >
-        <MessageCircle size={26} className="text-white" />
-      </motion.button>
+      {/* ── Bulle langues au-dessus du bouton WhatsApp ── */}
+      <AnimatePresence>
+        {!whatsappOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ delay: 2 }}
+            className="fixed bottom-24 right-4 z-39 flex items-center gap-1 px-2 py-1 rounded-full shadow-lg pointer-events-none"
+            style={{ background: 'rgba(0,0,0,0.75)', border: '1px solid rgba(37,211,102,0.3)' }}
+          >
+            {LANGUAGES.map(({ key, flag }) => (
+              <span key={key} className="text-sm" title={key}>
+                {flag}
+              </span>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Bouton WhatsApp avec point rouge clignotant ── */}
+      <div className="fixed bottom-6 right-4 z-40">
+        {/* Point rouge clignotant */}
+        <span className="absolute top-0 right-0 z-50">
+          <span className="block w-3 h-3 rounded-full bg-red-500" style={{ animation: 'ping 1.2s cubic-bezier(0,0,0.2,1) infinite', position: 'absolute' }} />
+          <span className="block w-3 h-3 rounded-full bg-red-500 relative" />
+        </span>
+
+        <motion.button
+          onClick={() => setWhatsappOpen(!whatsappOpen)}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1.4, type: 'spring' }}
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-green-600 hover:bg-green-500 shadow-2xl transition-colors"
+          aria-label="WhatsApp ATC Taxi Narbonne"
+        >
+          <MessageCircle size={26} className="text-white" />
+        </motion.button>
+      </div>
+
+      {/* ── Keyframes pour le ping ── */}
+      <style>{`
+        @keyframes ping {
+          75%, 100% { transform: scale(2); opacity: 0; }
+        }
+      `}</style>
     </>
   );
 }
