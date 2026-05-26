@@ -27,14 +27,14 @@ function CTABar() {
           Taxi disponible maintenant — Réservez votre course
         </p>
         <div className="flex gap-2">
-          
+          <a
             href={`tel:${PHONE}`}
             className="flex items-center gap-1.5 bg-[#2DBFBA] text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-[#26a8a3] transition-colors"
           >
             <Phone size={13} />
             {PHONE_DISPLAY}
           </a>
-          
+          <a
             href={WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
@@ -91,14 +91,14 @@ export function TaxiNarbonne() {
               ATC TAXI VTC Narbonne est votre taxi de confiance dans l'Aude. Taxi conventionné CPAM, transferts gare SNCF de Narbonne, aéroports Montpellier, Toulouse et Carcassonne. Service disponible 24h/24, 7j/7, week-ends et jours fériés.
             </p>
             <div className="flex flex-wrap gap-4">
-              
+              <a
                 href={`tel:${PHONE}`}
                 className="flex items-center gap-2 px-7 py-4 rounded-full font-bold text-white text-lg"
                 style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
               >
                 <Phone size={18} /> {PHONE_DISPLAY}
               </a>
-              
+              <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
