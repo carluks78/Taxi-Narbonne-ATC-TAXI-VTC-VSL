@@ -52,7 +52,7 @@ const cityData: Record<string, CityData> = {
     seoContent3: 'ATC TAXI VTC Narbonne dispose de véhicules spacieux pouvant transporter jusqu\'à 7 passagers avec bagages et matériel de sport (planche, kitesurf, etc.). Nos tarifs pour Leucate sont fixes et transparents. Réservez à l\'avance pour garantir votre place, surtout en haute saison estivale.',
     highlights: ['Port Leucate', 'La Franqui', 'Leucate Plage', 'Kitesurf & windsurf'],
     faq: [
-      { q: 'Quelle est la distance Narbonne – Leucate en taxi ?', a: 'La distance est d\'environ 25 km pour 30 minutes de trajet. Tarif estimé : 70 - 80€ selon l\'adresse exacte.' },
+      { q: 'Quelle est la distance Narbonne – Leucate en taxi ?', a: 'La distance est d\'environ 40 km pour 30 minutes de trajet. Tarif estimé : 90 - 100€ selon l\'adresse exacte.' },
       { q: 'Taxi Leucate – Aéroport Montpellier ?', a: 'Oui, transfert depuis Leucate vers Montpellier disponible. Tarif fixe sur demande au 07 68 30 33 03. Nous suivons votre vol en temps réel.' },
       { q: 'Taxi avec transport de matériel de kitesurf ?', a: 'Oui, nos véhicules spacieux peuvent transporter votre matériel de kitesurf ou windsurf. Signalez-le lors de la réservation pour prévoir le bon véhicule.' },
     ],
@@ -73,7 +73,7 @@ const cityData: Record<string, CityData> = {
     ],
   },
   'port-la-nouvelle': {
-    city: 'Port-la-Nouvelle', dept: 'Aude (11)', distance: '30 km', duration: '35 min',
+    city: 'Port-la-Nouvelle', dept: 'Aude (11)', distance: '28 km', duration: '35 min',
     heroImage: 'https://images.unsplash.com/photo-1717940726344-05e5af5058da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400',
     heroAlt: 'Port industriel maritime – Taxi Narbonne Port-la-Nouvelle ATC TAXI VTC',
     description: 'Taxi Narbonne – Port-la-Nouvelle. Premier port de pêche de Méditerranée. Transport professionnel pour le port, les entreprises et les particuliers de Port-la-Nouvelle.',
@@ -82,7 +82,7 @@ const cityData: Record<string, CityData> = {
     seoContent3: 'ATC TAXI VTC Narbonne propose également des déplacements médicaux conventionnés CPAM depuis Port-la-Nouvelle vers les établissements de santé de Narbonne. Port-la-Nouvelle est aussi une belle destination balnéaire avec sa plage et son boulevard de bord de mer. Réservation facile par téléphone ou WhatsApp.',
     highlights: ['Port de pêche', 'Port industriel & éolien', 'Plage', 'Zone d\'activités'],
     faq: [
-      { q: 'Combien coûte le taxi Narbonne – Port-la-Nouvelle ?', a: 'Le tarif est d\'environ 50 - 60€ selon l\'horaire et l\'adresse exacte. Tarifs professionnels disponibles pour les déplacements réguliers.' },
+      { q: 'Combien coûte le taxi Narbonne – Port-la-Nouvelle ?', a: 'Le tarif est d\'environ 60-70€ selon l\'horaire et l\'adresse exacte. Tarifs professionnels disponibles pour les déplacements réguliers.' },
       { q: 'Taxi Port-la-Nouvelle vers l\'aéroport de Montpellier ?', a: 'Oui ! Transfert depuis Port-la-Nouvelle vers l\'aéroport de Montpellier disponible. Tarif estimé 240-250€. Appelez le 07 68 30 33 03.' },
       { q: 'Taxi de nuit disponible pour les travailleurs du port ?', a: 'Absolument. Nous sommes disponibles 24h/24, 7j/7 pour les horaires décalés et les départs très matinaux des travailleurs portuaires.' },
     ],
