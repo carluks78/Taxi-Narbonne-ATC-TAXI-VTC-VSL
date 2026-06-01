@@ -16,7 +16,7 @@ const faqs = [
   { q: 'Le taxi de Narbonne est-il disponible la nuit ?', a: 'Oui, ATC TAXI VTC Narbonne est disponible 24h/24, 7j/7, y compris la nuit, les weekends et les jours fériés.' },
   { q: 'Proposez-vous le taxi conventionné à Narbonne ?', a: 'Oui, nous sommes agréés pour le transport médical conventionné CPAM. Apportez votre prescription médicale et la prise en charge est effectuée directement.' },
   { q: 'Desservez-vous les communes autour de Narbonne ?', a: "Oui, nous desservons Gruissan, Leucate, Sigean, Port-la-Nouvelle, Peyriac-de-Mer, Coursan, Vinassan, Bages et toutes les communes de l'Aude." },
-  { q: 'Taxi Narbonne pour les aéroports ?', a: 'Nous desservons les aéroports de Montpellier (1h, ~130€), Toulouse-Blagnac (1h30, ~185€), Carcassonne (45 min, ~90€) et Barcelone (2h30, ~275€).' },
+  { q: 'Taxi Narbonne pour les aéroports ?', a: 'Nous desservons les aéroports de Montpellier (1h, ~200-220€), Toulouse-Blagnac (1h30, ~350-370€), Carcassonne (45 min, ~125-145€), Barcelone (2h30, ~570-590€), Béziers-Cap d'Agde (45mn, ~80-90€).' },
 ];
 
 function CTABar() {
