@@ -207,15 +207,30 @@ export function Home() {
 >
   {/* LIGNE 1 */}
   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-    <a
-      href={`tel:${PHONE}`}
-      className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white text-lg shadow-2xl transition-all hover:scale-105"
-      style={{ background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})` }}
-    >
-      <Phone size={20} />
-      Appeler maintenant
-    </a>
-  </div>
+
+  <Link
+    to="/reservation"
+    className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white text-lg shadow-2xl transition-all hover:scale-105"
+    style={{
+      background: 'linear-gradient(135deg, #F59E0B, #D97706)',
+    }}
+  >
+    <CheckCircle size={20} />
+    Réserver maintenant
+  </Link>
+
+  <a
+    href={`tel:${PHONE}`}
+    className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white text-lg shadow-2xl transition-all hover:scale-105"
+    style={{
+      background: `linear-gradient(135deg, ${TEAL}, ${TEAL_DARK})`,
+    }}
+  >
+    <Phone size={20} />
+    Appeler maintenant
+  </a>
+
+</div>
 
   {/* GOOGLE AVIS */}
   <a
