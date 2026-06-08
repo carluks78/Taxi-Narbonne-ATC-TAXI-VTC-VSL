@@ -556,15 +556,6 @@ export function Reservation() {
   const isGare = watch('isGare');
   const hasAnimals = watch('hasAnimals');
 
-  // ← ajout ici
-  const formRef = useRef<HTMLDivElement>(null);
-
-  const handleSlotSelect = (date: string, time: string) => {
-    setValue('date', date);
-    setValue('time', time);
-    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   const onSubmit = (data: BookingFormData) => {
     setBookingData(data);
     setSubmitted(true);
@@ -1138,13 +1129,13 @@ export function Reservation() {
 }
 
 // ── Availability Grid ─────────────────────────────────────────────────────────
-function AvailabilityGrid({ onSlotSelect }: { onSlotSelect: (date: string, time: string) => void }) {
+function AvailabilityGrid() {
   const [weekOffset, setWeekOffset] = useState(0);
 
   const SLOTS = [
-    { key: 'morning', label: 'Matin', time: '06h – 12h', icon: '🌅', defaultTime: '08:00' },
-    { key: 'afternoon', label: 'Après-midi', time: '12h – 19h', icon: '☀️', defaultTime: '14:00' },
-    { key: 'evening', label: 'Soir / Nuit', time: '19h – 06h', icon: '🌙', defaultTime: '20:00' },
+    { key: 'morning', label: 'Matin', time: '06h – 12h', icon: '🌅' },
+    { key: 'afternoon', label: 'Après-midi', time: '12h – 19h', icon: '☀️' },
+    { key: 'evening', label: 'Soir / Nuit', time: '19h – 06h', icon: '🌙' },
   ];
 
   const getDays = () => {
@@ -1185,8 +1176,6 @@ function AvailabilityGrid({ onSlotSelect }: { onSlotSelect: (date: string, time:
 
         <div className="px-4 pb-4 overflow-x-auto">
           <div className="min-w-[520px] pt-3">
-
-            {/* ── En-têtes des jours ── */}
             <div className="grid mb-2" style={{ gridTemplateColumns: '90px repeat(7, 1fr)', gap: 4 }}>
               <div />
               {days.map((d, i) => {
@@ -1200,8 +1189,6 @@ function AvailabilityGrid({ onSlotSelect }: { onSlotSelect: (date: string, time:
                 );
               })}
             </div>
-
-            {/* ── Lignes de créneaux ── */}
             {SLOTS.map((slot) => (
               <div key={slot.key} className="grid mb-2" style={{ gridTemplateColumns: '90px repeat(7, 1fr)', gap: 4 }}>
                 <div className="flex flex-col justify-center pr-2">
@@ -1212,32 +1199,14 @@ function AvailabilityGrid({ onSlotSelect }: { onSlotSelect: (date: string, time:
                   const isPast = d < today;
                   const isPastSlot = d.getTime() === today.getTime() && slot.key === 'morning' && new Date().getHours() >= 12;
                   const unavail = isPast || isPastSlot;
-
-                  const isoDate = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-
                   return (
-                    <button
-                      key={i}
-                      type="button"
-                      disabled={unavail}
-                      onClick={() => onSlotSelect(isoDate, slot.defaultTime)}
-                      className="rounded-lg py-3 text-center text-xs transition-all"
-                      style={{
-                        background: unavail ? 'rgba(255,255,255,0.02)' : 'rgba(58,180,177,0.1)',
-                        border: unavail ? '1px solid rgba(255,255,255,0.06)' : '1px solid rgba(58,180,177,0.3)',
-                        color: unavail ? '#374151' : TEAL,
-                        cursor: unavail ? 'not-allowed' : 'pointer',
-                      }}
-                      onMouseEnter={e => { if (!unavail) e.currentTarget.style.background = 'rgba(58,180,177,0.25)'; }}
-                      onMouseLeave={e => { if (!unavail) e.currentTarget.style.background = 'rgba(58,180,177,0.1)'; }}
-                    >
+                    <div key={i} className="rounded-lg py-3 text-center text-xs" style={{ background: unavail ? 'rgba(255,255,255,0.02)' : 'rgba(58,180,177,0.1)', border: unavail ? '1px solid rgba(255,255,255,0.06)' : '1px solid rgba(58,180,177,0.3)', color: unavail ? '#374151' : TEAL }}>
                       {unavail ? '—' : '✓'}
-                    </button>
+                    </div>
                   );
                 })}
               </div>
             ))}
-
           </div>
         </div>
 
@@ -1245,7 +1214,7 @@ function AvailabilityGrid({ onSlotSelect }: { onSlotSelect: (date: string, time:
           <div className="flex items-start gap-2 p-3 rounded-lg" style={{ background: 'rgba(58,180,177,0.05)', border: '1px solid rgba(58,180,177,0.15)' }}>
             <Info size={13} style={{ color: TEAL, flexShrink: 0, marginTop: 2 }} />
             <p className="text-xs text-gray-400 leading-relaxed">
-              Cliquez sur un créneau pour pré-remplir le formulaire. Pour confirmation immédiate, appelez le{' '}
+              Disponibilité indicative — aucune donnée de l'agenda n'est exposée. Pour confirmation immédiate, appelez le{' '}
               <a href="tel:0768303303" style={{ color: TEAL }}>07 68 30 33 03</a> ou contactez-nous par{' '}
               <a href="https://wa.me/33768303303" target="_blank" rel="noopener noreferrer" style={{ color: TEAL }}>WhatsApp</a>.
             </p>
