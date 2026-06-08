@@ -209,16 +209,16 @@ export function Home() {
   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
 
   <Link
-  to="/reserver-taxi-narbonne"
-  className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg shadow-2xl transition-all hover:scale-105"
-  style={{
-    background: '#FFFFFF',
-    color: TEAL,
-  }}
->
-  <CheckCircle size={20} />
-  Réserver mon taxi
-</Link>
+    to="/reserver-taxi-narbonne"
+    className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg shadow-2xl transition-all hover:scale-105"
+    style={{
+      background: '#FFFFFF',
+      color: TEAL,
+    }}
+  >
+    <CheckCircle size={20} />
+    Réserver mon taxi
+  </Link>
 
   <a
     href={`tel:${PHONE}`}
@@ -231,55 +231,25 @@ export function Home() {
     Appeler maintenant
   </a>
 
-</div>
-           
-  {/* GOOGLE AVIS */}
   <a
     href={GOOGLE_REVIEW_URL}
     target="_blank"
     rel="noopener noreferrer"
-    className="group relative overflow-hidden flex items-center gap-4 px-7 py-4 rounded-2xl transition-all duration-300 hover:scale-105"
+    className="flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg shadow-2xl transition-all hover:scale-105"
     style={{
-      background: 'rgba(255,255,255,0.96)',
-      border: '1px solid rgba(255,255,255,0.15)',
-      boxShadow: '0 12px 40px rgba(0,0,0,0.25)',
-      backdropFilter: 'blur(12px)',
+      background: '#FFFFFF',
+      color: TEAL,
     }}
   >
-    {/* Glow */}
-    <div
-      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      style={{
-        background: `linear-gradient(135deg, rgba(58,180,177,0.10), rgba(58,180,177,0.03))`,
-      }}
-    />
+    <GoogleGLogo size={20} />
+    Avis Google ★★★★★
+  </a>
 
-    {/* Logo Google */}
-    <div className="relative z-10 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md">
-  <GoogleGLogo size={28} />
 </div>
 
-    {/* Texte */}
-    <div className="relative z-10 flex flex-col items-start text-left leading-tight">
-      <span className="text-gray-500 text-xs font-medium uppercase tracking-wide">
-        Votre avis compte
-      </span>
-
-      <span className="text-black text-base font-extrabold">
-        Noter ATC TAXI VTC Narbonne sur Google
-      </span>
-
-      <div className="flex items-center gap-2 mt-1">
-        <div className="flex text-yellow-400 text-sm tracking-tight">
-          ★★★★★
-        </div>
-
-        <span className="text-gray-600 text-xs font-semibold">
-          200+ avis clients
-        </span>
-      </div>
-    </div>
-  </a>
+<p className="text-gray-300 text-sm mt-4">
+  ⭐ Plus de 200 avis clients 5 étoiles sur Google
+</p>
 </motion.div>
 
           <motion.div
