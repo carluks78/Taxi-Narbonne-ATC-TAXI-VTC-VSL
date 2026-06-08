@@ -230,10 +230,6 @@ export function Home() {
     <Phone size={20} />
     Appeler maintenant
   </a>
-    
-    <p className="text-gray-300 text-sm mt-4">
-  ⭐ Votre satisfaction est notre meilleure publicité
-</p>
 
   <a
     href={GOOGLE_REVIEW_URL}
@@ -250,6 +246,10 @@ export function Home() {
   </a>
 
 </div>
+
+    <p className="text-gray-300 text-sm mt-4">
+  ⭐ Votre satisfaction est notre meilleure publicité
+</p>           
 
 <p className="text-gray-300 text-sm mt-4">
   ⭐ Plus de 200 avis clients 5 étoiles sur Google
