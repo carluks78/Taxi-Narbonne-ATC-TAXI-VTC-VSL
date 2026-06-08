@@ -248,7 +248,7 @@ export function Home() {
 </div>
 
     <p className="text-gray-300 text-sm mt-4">
-  ⭐ Votre satisfaction est notre meilleure publicité
+   ☝︎ Votre satisfaction est notre meilleure publicité ☝︎
 </p>           
 
 <p className="text-gray-300 text-sm mt-4">
